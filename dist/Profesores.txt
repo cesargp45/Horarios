@@ -1,0 +1,12 @@
+{
+  "Profesores": [
+    {
+      "NOMBRE": "MARTA ELISA ññ é É aá",
+      "MATERIAS": [
+       {
+        "NOMBRE":"Ingles"
+       }
+     ]     
+    }
+  ]
+}

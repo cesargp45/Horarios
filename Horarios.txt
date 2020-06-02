@@ -1,0 +1,31 @@
+{
+"Horarios":[
+   {
+     "PERIODOS":[
+     {
+      "NO":"1",
+      "DIAS":[
+        {
+          "NOMBRE":"Lunes",
+          "MATERIA":"Matematicas",
+          "PROFESOR":"ceci"
+        }
+       ]
+     },
+     {
+      "NO":"1",
+      "DIAS":[
+        {
+          "NOMBRE":"Martes",
+          "MATERIA":"Ingles",
+          "PROFESOR":"Marta"
+        }
+       ]
+     }
+   ],
+    "GRADO":"Segundo Primaria",
+    "SECCION":"A",
+    "ANIO":"2020"
+    }
+  ]
+}
