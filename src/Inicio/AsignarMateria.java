@@ -5,6 +5,12 @@
  */
 package Inicio;
 
+import static Inicio.CrearHorario.diaSelect;
+import static Inicio.CrearHorario.noSelect;
+import static Inicio.elegirAnio.anioActual;
+import static Inicio.elegirAnio.gradoSelect;
+import static Inicio.elegirAnio.seccionSelect;
+import static Inicio.inicio.listaHorarios;
 import static Inicio.inicio.listaMaterias;
 import static Inicio.inicio.listaProfesores;
 import javax.swing.JLabel;
@@ -122,12 +128,63 @@ public class AsignarMateria extends javax.swing.JFrame {
         if (mat.compareTo("") == 0 ||mat.compareTo("null") == 0 || mat == null ||prof.compareTo("") == 0 ||prof.compareTo("null") == 0 || prof == null){
             JOptionPane.showMessageDialog(null, "Seleccione una materia y un profesor");
          }else{           
-           elegido.setText("<html>"+mat+" \\ <p>"+prof+"<html>");
-           elegido.setHorizontalAlignment(SwingConstants.CENTER);
-           elegido.setVerticalAlignment(SwingConstants.CENTER);
-           prof = "";
-           mat = "";
-           dispose();
+           
+  
+             boolean repetida = false;
+             String gradrepetido = "";
+             String seccionrep = "";
+        
+         for (int i = 0; i < listaHorarios.size(); i++) {
+            if(listaHorarios.get(i).getAnio().compareTo(anioActual) == 0){
+                String gradselect =listaHorarios.get(i).getGrado();
+                String secselect = listaHorarios.get(i).getSeccion();
+                if((gradselect.compareTo(gradoSelect) == 0) && (secselect.compareTo(seccionSelect) == 0)){
+                }else{
+                
+                    for (int j = 0; j < listaHorarios.get(i).getPeriodos().size(); j++) {
+                       String numPeriodo = listaHorarios.get(i).getPeriodos().get(j).getNo();
+                  
+                     for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {
+                         String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
+                         if ((dia.compareTo(diaSelect) == 0) && (numPeriodo.compareTo(noSelect) == 0)){
+                             repetida = true;
+                             gradrepetido = gradselect;
+                             seccionrep = secselect;
+                             break;
+                         }                        
+                     }
+                     if(repetida){
+                       break;
+                     }
+                 }
+              }               
+            }
+            if(repetida){
+               break;
+             }
+         }
+            
+            
+            if(repetida){
+                prof = "";
+                mat = "";      
+                JOptionPane.showMessageDialog(null, "La profesora ya esta asignada en este mismo horario\n"
+                        + "en: " + gradrepetido + " " + seccionrep);
+            }else{               
+                elegido.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");       
+                elegido.setHorizontalAlignment(SwingConstants.CENTER);
+                elegido.setVerticalAlignment(SwingConstants.CENTER);
+                prof = "";
+                mat = "";
+                dispose();
+            
+            }
+            
+            
+            
+        
+            
+           
          }
          }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Seleccione una materia y un profesor");

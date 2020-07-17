@@ -5,15 +5,25 @@
  */
 package Inicio;
 
+import static Inicio.inicio.listaGrados;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author A8
  */
 public class elegirAnio extends javax.swing.JFrame {
     public static String anioActual = "";
+    public static String gradoSelect = "";
+    public static String seccionSelect = "";
     public elegirAnio() {
         initComponents();
         this.setLocationRelativeTo(null);
+         for (int i = 0; i < listaGrados.size(); i++) {
+            //if(listaGrados.get(i).getNombre().endsWith("Primaria")){
+                cbxGrados.addItem(listaGrados.get(i).getNombre()+" "+listaGrados.get(i).getSeccion());
+            //} 
+        }
     }
 
     /**
@@ -30,6 +40,8 @@ public class elegirAnio extends javax.swing.JFrame {
         cbxAnios = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        cbxGrados = new javax.swing.JComboBox();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 300));
@@ -61,7 +73,7 @@ public class elegirAnio extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(130, 180, 100, 30);
+        jButton1.setBounds(130, 210, 100, 30);
 
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +82,19 @@ public class elegirAnio extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(10, 253, 90, 30);
+        jButton2.setBounds(10, 260, 90, 30);
+
+        cbxGrados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxGradosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cbxGrados);
+        cbxGrados.setBounds(90, 150, 190, 20);
+
+        jLabel2.setText("Elige un Grado");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(150, 120, 90, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,12 +121,47 @@ public class elegirAnio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       
-        anioActual = cbxAnios.getSelectedItem().toString();       
-        CrearHorario CrearHorario = new CrearHorario();
-        CrearHorario.setVisible(true);
-        dispose();
+
+        
+        anioActual = cbxAnios.getSelectedItem().toString();  
+        String string = cbxGrados.getSelectedItem().toString();
+        String[] separado = string.split(" ");
+        
+        if (separado.length == 2){
+            System.out.println("entro a prepri");
+            gradoSelect = separado[0];
+            seccionSelect = separado[1];
+        }else if(separado.length == 3){
+            
+            if(separado [1].compareTo("Primaria") == 0){
+                 gradoSelect = separado[0]+" "+separado[1];
+                 seccionSelect = separado[2];
+                 System.out.println("entro a primaria");
+                 CrearHorario CrearHorario = new CrearHorario();
+                 CrearHorario.setVisible(true);
+                 dispose();
+            }else{
+                 System.out.println("entro a basicos");
+                 gradoSelect = separado[0]+" "+separado[1];
+                 seccionSelect = separado[2];
+            }
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "Porfavor Seleccione las opciones indicadas");
+        }
+        
+        
+        
+        
+        
+        
+             
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cbxGradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxGradosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxGradosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,9 +200,11 @@ public class elegirAnio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cbxAnios;
+    private javax.swing.JComboBox cbxGrados;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

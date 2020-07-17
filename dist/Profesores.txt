@@ -1,12 +1,1 @@
-{
-  "Profesores": [
-    {
-      "NOMBRE": "MARTA ELISA ññ é É aá",
-      "MATERIAS": [
-       {
-        "NOMBRE":"Ingles"
-       }
-     ]     
-    }
-  ]
-}
+{"Profesores":[{"MATERIAS":[{"NOMBRE":"Ingles"},{"NOMBRE":"Matematicas"}],"NOMBRE":"Juana"},{"MATERIAS":[],"NOMBRE":"Marta"},{"MATERIAS":[{"NOMBRE":"Biologia"},{"NOMBRE":"Quimica"},{"NOMBRE":"Fisica Fundamental"},{"NOMBRE":"Estadistica"}],"NOMBRE":"Guisela"},{"MATERIAS":[{"NOMBRE":"Sociales"},{"NOMBRE":"Plasticas"},{"NOMBRE":"Quimica"},{"NOMBRE":"Estadistica"},{"NOMBRE":"Matematicas"}],"NOMBRE":"ceci"},{"MATERIAS":[{"NOMBRE":"Religión"},{"NOMBRE":"Lectura"},{"NOMBRE":"Literatura"}],"NOMBRE":"Gabriela"},{"MATERIAS":[{"NOMBRE":"Quimica"},{"NOMBRE":"Biologia"}],"NOMBRE":"Julia"},{"MATERIAS":[{"NOMBRE":"Educación Fisica"}],"NOMBRE":"Mar"},{"MATERIAS":[{"NOMBRE":"Formación Ciudadana"}],"NOMBRE":"Aurora"},{"MATERIAS":[{"NOMBRE":"Geografia"},{"NOMBRE":"Contabilidad"}],"NOMBRE":"Luisa"},{"MATERIAS":[{"NOMBRE":"Religión"},{"NOMBRE":"Formación Ciudadana"}],"NOMBRE":"Fatima"}]}

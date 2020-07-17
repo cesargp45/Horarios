@@ -6,31 +6,287 @@
 package Inicio;
 
 import static Inicio.elegirAnio.anioActual;
+import static Inicio.elegirAnio.gradoSelect;
+import static Inicio.elegirAnio.seccionSelect;
 import static Inicio.inicio.listaGrados;
 import static Inicio.inicio.listaHorarios;
+import Profesor.Dia;
+import Profesor.Horario;
+import Profesor.Periodo;
 import java.awt.Color;
+import java.util.LinkedList;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 
 public class CrearHorario extends javax.swing.JFrame {
 
-     
+     public static String diaSelect;
+     public static String noSelect;
      public String sec = "";
      public String gra = ""; 
-    public CrearHorario() {
+      public CrearHorario() {
         initComponents();
         this.setLocationRelativeTo(null);
         lblAnio.setText(anioActual);
+        lblGrado.setText(gradoSelect +" "+ seccionSelect);
         
+        boolean existe= false;
         
-        
-        for (int i = 0; i < listaGrados.size(); i++) {
-            if(listaGrados.get(i).getNombre().endsWith("Primaria")){
-                cbxGrados.addItem(listaGrados.get(i).getNombre()+" "+listaGrados.get(i).getSeccion());
+         for (int i = 0; i < listaHorarios.size(); i++) {
+            if(listaHorarios.get(i).getAnio().compareTo(anioActual) == 0){
+                String gradselect =listaHorarios.get(i).getGrado();
+                String secselect = listaHorarios.get(i).getSeccion();
+                if((gradselect.compareTo(gradoSelect) == 0) && (secselect.compareTo(seccionSelect)== 0)){
+                    existe = true;
+                    for (int j = 0; j < listaHorarios.get(i).getPeriodos().size(); j++) {
+                         String numPeriodo = listaHorarios.get(i).getPeriodos().get(j).getNo();
+                  
+                     for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {
+                         String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
+                         String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
+                         String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
+                         switch(numPeriodo){
+   
+                              case "1" :
+                                  switch(dia){
+                                    case "Lunes" :
+                                        lblLunes1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes1.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes1.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Martes" :
+                                        lblMartes1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes1.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes1.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles1.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles1.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves1.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves1.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes1.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes1.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+    
+                               break; 
+   
+                              case "2" :
+                                  switch(dia){
+                                    case "Lunes" :
+                                        lblLunes2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes2.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes2.setVerticalAlignment(SwingConstants.CENTER);
+                                        
+                                    break;
+                                    case "Martes" :
+                                        lblMartes2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes2.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes2.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles2.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles2.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves2.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves2.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes2.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes2.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+      
+                               break; 
+                              
+                               case "3" :
+                                   switch(dia){
+                                    case "Lunes" :
+                                        lblLunes3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes3.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes3.setVerticalAlignment(SwingConstants.CENTER);
+                                        
+                                    break;
+                                    case "Martes" :
+                                        lblMartes3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes3.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes3.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles3.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles3.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves3.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves3.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes3.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes3.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+      
+                               break;
+                                   
+                               case "4" :
+                                   switch(dia){
+                                    case "Lunes" :
+                                        lblLunes4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes4.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes4.setVerticalAlignment(SwingConstants.CENTER);
+                                        
+                                    break;
+                                    case "Martes" :
+                                        lblMartes4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes4.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes4.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles4.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles4.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves4.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves4.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes4.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes4.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+      
+                               break;
+                                   
+                               case "5" :
+                                   switch(dia){
+                                    case "Lunes" :
+                                        lblLunes5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes5.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes5.setVerticalAlignment(SwingConstants.CENTER);
+                                        
+                                    break;
+                                    case "Martes" :
+                                        lblMartes5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes5.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes5.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles5.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles5.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves5.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves5.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes5.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes5.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+      
+                               break;
+                                   
+                               case "6" :
+                                   switch(dia){
+                                    case "Lunes" :
+                                        lblLunes6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes6.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes6.setVerticalAlignment(SwingConstants.CENTER);
+                                        
+                                    break;
+                                    case "Martes" :
+                                        lblMartes6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes6.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes6.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles6.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles6.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves6.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves6.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes6.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes6.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+      
+                               break;
+                               
+                               case "7" :
+                                   switch(dia){
+                                    case "Lunes" :
+                                        lblLunes7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblLunes7.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblLunes7.setVerticalAlignment(SwingConstants.CENTER);
+                                        
+                                    break;
+                                    case "Martes" :
+                                        lblMartes7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMartes7.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMartes7.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Miercoles" :
+                                        lblMiercoles7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblMiercoles7.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles7.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Jueves" :
+                                        lblJueves7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblJueves7.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblJueves7.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                    case "Viernes" :
+                                        lblViernes7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
+                                        lblViernes7.setHorizontalAlignment(SwingConstants.CENTER);
+                                        lblViernes7.setVerticalAlignment(SwingConstants.CENTER);
+                                    break;
+                                                                                              
+                                  }
+      
+                               break;
+
+                          }
+                                                
+                     }
+                 }
+              }
             }
-        }
+         }
         
-        
+         
         
         
         
@@ -119,8 +375,8 @@ public class CrearHorario extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        cbxGrados = new javax.swing.JComboBox();
-        jButton4 = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        lblGrado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(965, 650));
@@ -943,7 +1199,7 @@ public class CrearHorario extends javax.swing.JFrame {
 
         lblAnio.setText(".");
         jPanel1.add(lblAnio);
-        lblAnio.setBounds(460, 40, 70, 20);
+        lblAnio.setBounds(440, 40, 70, 20);
 
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -967,22 +1223,11 @@ public class CrearHorario extends javax.swing.JFrame {
         jPanel1.add(jButton3);
         jButton3.setBounds(40, 590, 100, 23);
 
-        cbxGrados.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbxGradosItemStateChanged(evt);
-            }
-        });
-        jPanel1.add(cbxGrados);
-        cbxGrados.setBounds(30, 20, 150, 20);
-
-        jButton4.setText("ver");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(230, 20, 49, 23);
+        jLabel18.setText("Grado:");
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(20, 10, 60, 14);
+        jPanel1.add(lblGrado);
+        lblGrado.setBounds(20, 30, 150, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1001,6 +1246,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes1MouseClicked
        AsignarMateria AsignarMateria = new AsignarMateria(lblLunes1);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "1";
        
     }//GEN-LAST:event_lblLunes1MouseClicked
 
@@ -1015,6 +1262,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes2MouseClicked
             AsignarMateria AsignarMateria = new AsignarMateria(lblLunes2);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "2";
     }//GEN-LAST:event_lblLunes2MouseClicked
 
     private void lblLunes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes2MouseEntered
@@ -1028,6 +1277,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes3MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblLunes3);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "3";
     }//GEN-LAST:event_lblLunes3MouseClicked
 
     private void lblLunes3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes3MouseEntered
@@ -1041,6 +1292,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes4MouseClicked
        AsignarMateria AsignarMateria = new AsignarMateria(lblLunes4);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "4";
     }//GEN-LAST:event_lblLunes4MouseClicked
 
     private void lblLunes4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes4MouseEntered
@@ -1054,6 +1307,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes5MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblLunes5);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "5";
     }//GEN-LAST:event_lblLunes5MouseClicked
 
     private void lblLunes5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes5MouseEntered
@@ -1067,6 +1322,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes6MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblLunes6);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "6";
     }//GEN-LAST:event_lblLunes6MouseClicked
 
     private void lblLunes6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes6MouseEntered
@@ -1080,6 +1337,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblLunes7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes7MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblLunes7);
        AsignarMateria.setVisible(true);
+       diaSelect = "Lunes";
+       noSelect = "7";
     }//GEN-LAST:event_lblLunes7MouseClicked
 
     private void lblLunes7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes7MouseEntered
@@ -1093,6 +1352,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes1MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes1);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "1";
     }//GEN-LAST:event_lblMartes1MouseClicked
 
     private void lblMartes1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes1MouseEntered
@@ -1106,6 +1367,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes2MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes2);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "2";
     }//GEN-LAST:event_lblMartes2MouseClicked
 
     private void lblMartes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes2MouseEntered
@@ -1119,6 +1382,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes3MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes3);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "3";
     }//GEN-LAST:event_lblMartes3MouseClicked
 
     private void lblMartes3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes3MouseEntered
@@ -1132,6 +1397,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes4MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes4);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "4";
     }//GEN-LAST:event_lblMartes4MouseClicked
 
     private void lblMartes4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes4MouseEntered
@@ -1145,6 +1412,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes5MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes5);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "5";
     }//GEN-LAST:event_lblMartes5MouseClicked
 
     private void lblMartes5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes5MouseEntered
@@ -1158,6 +1427,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes6MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes6);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "6";
     }//GEN-LAST:event_lblMartes6MouseClicked
 
     private void lblMartes6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes6MouseEntered
@@ -1171,6 +1442,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMartes7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes7MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMartes7);
        AsignarMateria.setVisible(true);
+       diaSelect = "Martes";
+       noSelect = "7";
     }//GEN-LAST:event_lblMartes7MouseClicked
 
     private void lblMartes7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes7MouseEntered
@@ -1184,6 +1457,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles1MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles1);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "1";
     }//GEN-LAST:event_lblMiercoles1MouseClicked
 
     private void lblMiercoles1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles1MouseEntered
@@ -1197,6 +1472,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles2MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles2);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "2";
     }//GEN-LAST:event_lblMiercoles2MouseClicked
 
     private void lblMiercoles2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles2MouseEntered
@@ -1210,6 +1487,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles3MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles3);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "3";
     }//GEN-LAST:event_lblMiercoles3MouseClicked
 
     private void lblMiercoles3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles3MouseEntered
@@ -1223,6 +1502,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles4MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles4);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "4";
     }//GEN-LAST:event_lblMiercoles4MouseClicked
 
     private void lblMiercoles4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles4MouseEntered
@@ -1236,6 +1517,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles5MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles5);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "5";
     }//GEN-LAST:event_lblMiercoles5MouseClicked
 
     private void lblMiercoles5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles5MouseEntered
@@ -1249,6 +1532,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles6MouseClicked
        AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles6);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "6";
     }//GEN-LAST:event_lblMiercoles6MouseClicked
 
     private void lblMiercoles6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles6MouseEntered
@@ -1262,6 +1547,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblMiercoles7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles7MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblMiercoles7);
        AsignarMateria.setVisible(true);
+       diaSelect = "Miercoles";
+       noSelect = "7";
     }//GEN-LAST:event_lblMiercoles7MouseClicked
 
     private void lblMiercoles7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles7MouseEntered
@@ -1275,6 +1562,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves1MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblJueves1);
        AsignarMateria.setVisible(true);
+        diaSelect = "Jueves";
+        noSelect = "1";
     }//GEN-LAST:event_lblJueves1MouseClicked
 
     private void lblJueves1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves1MouseEntered
@@ -1288,6 +1577,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves2MouseClicked
          AsignarMateria AsignarMateria = new AsignarMateria(lblJueves2);
        AsignarMateria.setVisible(true);
+       diaSelect = "Jueves";
+       noSelect = "2";
     }//GEN-LAST:event_lblJueves2MouseClicked
 
     private void lblJueves2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves2MouseEntered
@@ -1301,6 +1592,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves3MouseClicked
          AsignarMateria AsignarMateria = new AsignarMateria(lblJueves3);
        AsignarMateria.setVisible(true);
+       diaSelect = "Jueves";
+       noSelect = "3";
     }//GEN-LAST:event_lblJueves3MouseClicked
 
     private void lblJueves3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves3MouseEntered
@@ -1314,6 +1607,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves4MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblJueves4);
        AsignarMateria.setVisible(true);
+       diaSelect = "Jueves";
+       noSelect = "4";
     }//GEN-LAST:event_lblJueves4MouseClicked
 
     private void lblJueves4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves4MouseEntered
@@ -1327,6 +1622,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves5MouseClicked
          AsignarMateria AsignarMateria = new AsignarMateria(lblJueves5);
        AsignarMateria.setVisible(true);
+       diaSelect = "Jueves";
+       noSelect = "5";
     }//GEN-LAST:event_lblJueves5MouseClicked
 
     private void lblJueves5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves5MouseEntered
@@ -1340,6 +1637,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves6MouseClicked
          AsignarMateria AsignarMateria = new AsignarMateria(lblJueves6);
        AsignarMateria.setVisible(true);
+       diaSelect = "Jueves";
+       noSelect = "6";
     }//GEN-LAST:event_lblJueves6MouseClicked
 
     private void lblJueves6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves6MouseEntered
@@ -1353,6 +1652,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblJueves7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves7MouseClicked
          AsignarMateria AsignarMateria = new AsignarMateria(lblJueves7);
        AsignarMateria.setVisible(true);
+       diaSelect = "Jueves";
+       noSelect = "7";
     }//GEN-LAST:event_lblJueves7MouseClicked
 
     private void lblJueves7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves7MouseEntered
@@ -1366,6 +1667,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes1MouseClicked
          AsignarMateria AsignarMateria = new AsignarMateria(lblViernes1);
        AsignarMateria.setVisible(true);
+       diaSelect = "Viernes";
+       noSelect = "1";
     }//GEN-LAST:event_lblViernes1MouseClicked
 
     private void lblViernes1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes1MouseEntered
@@ -1379,6 +1682,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes2MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblViernes2);
        AsignarMateria.setVisible(true);
+        diaSelect = "Viernes";
+       noSelect = "2";
     }//GEN-LAST:event_lblViernes2MouseClicked
 
     private void lblViernes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes2MouseEntered
@@ -1392,6 +1697,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes3MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblViernes3);
        AsignarMateria.setVisible(true);
+        diaSelect = "Viernes";
+       noSelect = "3";
     }//GEN-LAST:event_lblViernes3MouseClicked
 
     private void lblViernes3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes3MouseEntered
@@ -1405,6 +1712,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes4MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblViernes4);
        AsignarMateria.setVisible(true);
+       diaSelect = "Viernes";
+       noSelect = "4";
     }//GEN-LAST:event_lblViernes4MouseClicked
 
     private void lblViernes4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes4MouseEntered
@@ -1418,6 +1727,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes5MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblViernes5);
        AsignarMateria.setVisible(true);
+       diaSelect = "Viernes";
+       noSelect = "5";
     }//GEN-LAST:event_lblViernes5MouseClicked
 
     private void lblViernes5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes5MouseEntered
@@ -1431,6 +1742,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes6MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblViernes6);
        AsignarMateria.setVisible(true);
+       diaSelect = "Viernes";
+       noSelect = "6";
     }//GEN-LAST:event_lblViernes6MouseClicked
 
     private void lblViernes6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes6MouseEntered
@@ -1444,6 +1757,8 @@ public class CrearHorario extends javax.swing.JFrame {
     private void lblViernes7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes7MouseClicked
         AsignarMateria AsignarMateria = new AsignarMateria(lblViernes7);
        AsignarMateria.setVisible(true);
+       diaSelect = "Viernes";
+       noSelect = "7";
     }//GEN-LAST:event_lblViernes7MouseClicked
 
     private void lblViernes7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes7MouseEntered
@@ -1455,177 +1770,811 @@ public class CrearHorario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes7MouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+       
+          
+          LinkedList<Periodo> recogerPeriodos = new  LinkedList<Periodo>();
+          String profe = "";
+          String contenido = "";
+          boolean vacio = false;
+          
+          if(!vacio){
+           contenido = lblLunes1.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("1");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes1.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("1");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles1.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("1");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves1.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("1");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes1.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("1");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+        
+              
+              
+
+        if(!vacio){
+           contenido = lblLunes2.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("2");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes2.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("2");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles2.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("2");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves2.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("2");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes2.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("2");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+              
+              
+              
+              
+              if(!vacio){
+           contenido = lblLunes3.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("3");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes3.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("3");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles3.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("3");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves3.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("3");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes3.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("3");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+        
+
+        
+
+        
+        if(!vacio){
+           contenido = lblLunes4.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("4");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes4.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("4");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles4.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("4");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves4.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("4");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes4.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("4");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+        
+
+              
+              
+              if(!vacio){
+           contenido = lblLunes5.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("5");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes5.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("5");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles5.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("5");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves5.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("5");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes5.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("5");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+        
+
+         
+              
+              if(!vacio){
+           contenido = lblLunes6.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("6");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes6.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("6");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles6.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("6");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves6.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("6");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes6.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("6");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+        
+
+              
+              if(!vacio){
+           contenido = lblLunes7.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Lunes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("7");
+               nuevo2.setDias(recogerDias);
+               
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMartes7.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Martes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("7");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+          
+          if(!vacio){
+           contenido = lblMiercoles7.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Miercoles");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("7");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+          
+            if(!vacio){
+           contenido = lblJueves7getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Jueves");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("7");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+            
+              if(!vacio){
+           contenido = lblViernes7.getText();
+           if(contenido.compareTo("Vacio") != 0){
+               String[] separado = contenido.split("#");
+               LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
+               Dia nuevo = new Dia();
+               nuevo.setMateria(separado[1]);
+               nuevo.setProfesor(separado[3]);
+               nuevo.setNombre("Viernes");
+               recogerDias.add(nuevo);
+               
+               Periodo nuevo2 = new Periodo();
+               nuevo2.setNo("7");
+               nuevo2.setDias(recogerDias);
+           } else{
+               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
+               recogerPeriodos.clear();
+               vacio = true;
+           }      
+          }
+ 
+              if(!vacio){
+                  Horario nuevo = new Horario ();
+                  nuevo.setAnio(anioActual);
+                  nuevo.setGrado(gradoSelect);
+                  nuevo.setSeccion(seccionSelect);
+                  nuevo.setPeriodos(recogerPeriodos);
+              }
+ 
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       inicio inicio = new inicio();
-       inicio.setVisible(true);
-       dispose();        
+       
+        int desicion = JOptionPane.showConfirmDialog(null, "Si sale sin guardar, no se aplicaran los cambios \n ¿Deseea salir?");
+            
+             if(desicion == JOptionPane.YES_OPTION){
+                 
+              inicio inicio = new inicio();
+              inicio.setVisible(true);
+              dispose();  
+              
+             }       
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
-        
-        String gradoActual = cbxGrados.getSelectedItem().toString();
-        
-        for (int i = 0; i < listaHorarios.size(); i++) {
-            
-            
-        }
-        
-        
-        
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void cbxGradosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxGradosItemStateChanged
-        //cbxGrados.removeAllItems();
-        String query = cbxGrados.getSelectedItem().toString();           
-         String[] n = query.split(" ");
-          sec = n[n.length-1];         
-          gra = n[0]+" "+n[1];
-         //JOptionPane.showMessageDialog(null, "si existe a que eligio: "+gra);       
-        if(query.compareTo("") == 0 || query == null){        
-          JOptionPane.showMessageDialog(null, "Seleccione una materia");  
-        }else{
-            
-            for (int i = 0; i < listaHorarios.size(); i++) {
-                if (listaHorarios.get(i).getGrado().compareTo(gra)== 0 && listaHorarios.get(i).getSeccion().compareTo(sec)==0 && listaHorarios.get(i).getAnio().compareTo(anioActual)==0){
-                    //JOptionPane.showMessageDialog(null, "si existe a que eligio");  
-                    System.out.println("otra "+listaHorarios.size());
-                    for (int j = 0; j < listaHorarios.get(i).getPeriodos().size(); j++) {
-                        
-                       String no =  listaHorarios.get(i).getPeriodos().get(j).getNo();
-                       
-                       
-                        for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {
-                            String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
-                            
-                        if (no.compareTo("1")==0){
-                           switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                           
-                           
-                        }else if(no.compareTo("2")==0){
-                            
-                           switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                            
-                        }else if(no.compareTo("3")==0){
-                            
-                            switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                            
-                        }else if(no.compareTo("4")==0){
-                            
-                            switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                            
-                            
-                        }else if(no.compareTo("5")==0){
-                            
-                            switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                            
-                            
-                        }else if(no.compareTo("6")==0){
-                            
-                            switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                            
-                            
-                        }else if(no.compareTo("7")==0){
-                            switch(dia){
-                               case "Lunes":
-                                   break;
-                               case "Martes":
-                                   break;
-                               case "Miercoles":
-                                   break;
-                               case "Jueves":
-                                   break;
-                               case "Viernes":
-                                   break;
-                                   
-                           }
-                            
-                            
-                        }else{
-                           JOptionPane.showMessageDialog(null, "Ocurrio un Error en la base de datos"); 
-                        }
-                       }
-                          
-                    }
-                }
-            }
-        }      
-    }//GEN-LAST:event_cbxGradosItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1663,11 +2612,9 @@ public class CrearHorario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox cbxGrados;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1677,6 +2624,7 @@ public class CrearHorario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1708,6 +2656,7 @@ public class CrearHorario extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lblAnio;
+    private javax.swing.JLabel lblGrado;
     private javax.swing.JLabel lblJueves1;
     private javax.swing.JLabel lblJueves2;
     private javax.swing.JLabel lblJueves3;

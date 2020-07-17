@@ -190,7 +190,7 @@ public class Grados extends javax.swing.JFrame {
         String seccion = cbxSeccion.getSelectedItem().toString();
         
         if (((grado.compareTo("") == 0) || (grado == null)) || ((seccion.compareTo("") == 0) || (seccion == null)) ){
-            JOptionPane.showMessageDialog(null, "Seleccione una Materia por favor !!!");
+            JOptionPane.showMessageDialog(null, "Seleccione un grado por favor !!!");
          }else{
               boolean esta = true;
               for (int i = 0; i < listaGrados.size(); i++) {
