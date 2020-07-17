@@ -25,6 +25,7 @@ public class CrearHorario extends javax.swing.JFrame {
      public static String noSelect;
      public String sec = "";
      public String gra = ""; 
+     public static boolean guardado = false ;
       public CrearHorario() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -286,7 +287,120 @@ public class CrearHorario extends javax.swing.JFrame {
             }
          }
         
-         
+         if(!existe){
+             lblLunes1.setText("Vacio");
+             lblLunes1.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes1.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes1.setText("Vacio");
+             lblMartes1.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes1.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles1.setText("Vacio");
+             lblMiercoles1.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles1.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves1.setText("Vacio");
+             lblJueves1.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves1.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes1.setText("Vacio");
+             lblViernes1.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes1.setVerticalAlignment(SwingConstants.CENTER);
+             
+             lblLunes2.setText("Vacio");
+             lblLunes2.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes2.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes2.setText("Vacio");
+             lblMartes2.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes2.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles2.setText("Vacio");
+             lblMiercoles2.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles2.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves2.setText("Vacio");
+             lblJueves2.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves2.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes2.setText("Vacio");
+             lblViernes2.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes2.setVerticalAlignment(SwingConstants.CENTER);
+             
+             lblLunes3.setText("Vacio");
+             lblLunes3.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes3.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes3.setText("Vacio");
+             lblMartes3.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes3.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles3.setText("Vacio");
+             lblMiercoles3.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles3.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves3.setText("Vacio");
+             lblJueves3.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves3.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes3.setText("Vacio");
+             lblViernes3.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes3.setVerticalAlignment(SwingConstants.CENTER);
+             
+             lblLunes4.setText("Vacio");
+             lblLunes4.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes4.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes4.setText("Vacio");
+             lblMartes4.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes4.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles4.setText("Vacio");
+             lblMiercoles4.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles4.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves4.setText("Vacio");
+             lblJueves4.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves4.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes4.setText("Vacio");
+             lblViernes4.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes4.setVerticalAlignment(SwingConstants.CENTER);
+             
+             lblLunes5.setText("Vacio");
+             lblLunes5.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes5.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes5.setText("Vacio");
+             lblMartes5.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes5.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles5.setText("Vacio");
+             lblMiercoles5.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles5.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves5.setText("Vacio");
+             lblJueves5.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves5.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes5.setText("Vacio");
+             lblViernes5.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes5.setVerticalAlignment(SwingConstants.CENTER);
+             
+             lblLunes6.setText("Vacio");
+             lblLunes6.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes6.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes6.setText("Vacio");
+             lblMartes6.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes6.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles6.setText("Vacio");
+             lblMiercoles6.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles6.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves6.setText("Vacio");
+             lblJueves6.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves6.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes6.setText("Vacio");
+             lblViernes6.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes6.setVerticalAlignment(SwingConstants.CENTER);
+             
+             lblLunes7.setText("Vacio");
+             lblLunes7.setHorizontalAlignment(SwingConstants.CENTER);
+             lblLunes7.setVerticalAlignment(SwingConstants.CENTER);            
+             lblMartes7.setText("Vacio");
+             lblMartes7.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMartes7.setVerticalAlignment(SwingConstants.CENTER);
+             lblMiercoles7.setText("Vacio");
+             lblMiercoles7.setHorizontalAlignment(SwingConstants.CENTER);
+             lblMiercoles7.setVerticalAlignment(SwingConstants.CENTER);
+             lblJueves7.setText("Vacio");
+             lblJueves7.setHorizontalAlignment(SwingConstants.CENTER);
+             lblJueves7.setVerticalAlignment(SwingConstants.CENTER);
+             lblViernes7.setText("Vacio");
+             lblViernes7.setHorizontalAlignment(SwingConstants.CENTER);
+             lblViernes7.setVerticalAlignment(SwingConstants.CENTER);
+             
+         }
         
         
         
@@ -564,7 +678,6 @@ public class CrearHorario extends javax.swing.JFrame {
         jLabel16.setBounds(150, 320, 750, 60);
 
         lblLunes1.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes1.setText("                   Vacio");
         lblLunes1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes1.setOpaque(true);
         lblLunes1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -582,7 +695,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes1.setBounds(150, 120, 150, 50);
 
         lblLunes2.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes2.setText("                   Vacio");
         lblLunes2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes2.setOpaque(true);
         lblLunes2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -600,7 +712,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes2.setBounds(150, 170, 150, 50);
 
         lblLunes3.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes3.setText("                   Vacio");
         lblLunes3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes3.setOpaque(true);
         lblLunes3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -618,7 +729,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes3.setBounds(150, 220, 150, 50);
 
         lblLunes4.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes4.setText("                   Vacio");
         lblLunes4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes4.setOpaque(true);
         lblLunes4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -636,7 +746,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes4.setBounds(150, 270, 150, 50);
 
         lblLunes5.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes5.setText("                   Vacio");
         lblLunes5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes5.setOpaque(true);
         lblLunes5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -654,7 +763,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes5.setBounds(150, 380, 150, 50);
 
         lblLunes6.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes6.setText("                   Vacio");
         lblLunes6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes6.setOpaque(true);
         lblLunes6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -672,7 +780,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes6.setBounds(150, 430, 150, 50);
 
         lblLunes7.setBackground(new java.awt.Color(255, 153, 51));
-        lblLunes7.setText("                   Vacio");
         lblLunes7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblLunes7.setOpaque(true);
         lblLunes7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -690,7 +797,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblLunes7.setBounds(150, 480, 150, 50);
 
         lblMartes1.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes1.setText("                   Vacio");
         lblMartes1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes1.setOpaque(true);
         lblMartes1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -708,7 +814,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes1.setBounds(300, 120, 150, 50);
 
         lblMartes2.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes2.setText("                   Vacio");
         lblMartes2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes2.setOpaque(true);
         lblMartes2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -726,7 +831,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes2.setBounds(300, 170, 150, 50);
 
         lblMartes3.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes3.setText("                   Vacio");
         lblMartes3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes3.setOpaque(true);
         lblMartes3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -744,7 +848,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes3.setBounds(300, 220, 150, 50);
 
         lblMartes4.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes4.setText("                   Vacio");
         lblMartes4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes4.setOpaque(true);
         lblMartes4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -762,7 +865,7 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes4.setBounds(300, 270, 150, 50);
 
         lblMartes5.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes5.setText("                   Vacio");
+        lblMartes5.setText("                   ");
         lblMartes5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes5.setOpaque(true);
         lblMartes5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -780,7 +883,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes5.setBounds(300, 380, 150, 50);
 
         lblMartes6.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes6.setText("                   Vacio");
         lblMartes6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes6.setOpaque(true);
         lblMartes6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -798,7 +900,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes6.setBounds(300, 430, 150, 50);
 
         lblMartes7.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes7.setText("                   Vacio");
         lblMartes7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes7.setOpaque(true);
         lblMartes7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -816,7 +917,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMartes7.setBounds(300, 480, 150, 50);
 
         lblMiercoles1.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles1.setText("                   Vacio");
         lblMiercoles1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles1.setOpaque(true);
         lblMiercoles1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -834,7 +934,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles1.setBounds(450, 120, 150, 50);
 
         lblMiercoles2.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles2.setText("                   Vacio");
         lblMiercoles2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles2.setOpaque(true);
         lblMiercoles2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -852,7 +951,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles2.setBounds(450, 170, 150, 50);
 
         lblMiercoles3.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles3.setText("                   Vacio");
         lblMiercoles3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles3.setOpaque(true);
         lblMiercoles3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -870,7 +968,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles3.setBounds(450, 220, 150, 50);
 
         lblMiercoles4.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles4.setText("                   Vacio");
         lblMiercoles4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles4.setOpaque(true);
         lblMiercoles4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -888,7 +985,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles4.setBounds(450, 270, 150, 50);
 
         lblMiercoles5.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles5.setText("                   Vacio");
         lblMiercoles5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles5.setOpaque(true);
         lblMiercoles5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -906,7 +1002,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles5.setBounds(450, 380, 150, 50);
 
         lblMiercoles6.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles6.setText("                   Vacio");
         lblMiercoles6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles6.setOpaque(true);
         lblMiercoles6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -924,7 +1019,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles6.setBounds(450, 430, 150, 50);
 
         lblMiercoles7.setBackground(new java.awt.Color(255, 153, 51));
-        lblMiercoles7.setText("                   Vacio");
         lblMiercoles7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMiercoles7.setOpaque(true);
         lblMiercoles7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -942,7 +1036,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblMiercoles7.setBounds(450, 480, 150, 50);
 
         lblJueves1.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves1.setText("                   Vacio");
         lblJueves1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves1.setOpaque(true);
         lblJueves1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -960,7 +1053,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves1.setBounds(600, 120, 150, 50);
 
         lblJueves2.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves2.setText("                   Vacio");
         lblJueves2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves2.setOpaque(true);
         lblJueves2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -978,7 +1070,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves2.setBounds(600, 170, 150, 50);
 
         lblJueves3.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves3.setText("                   Vacio");
         lblJueves3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves3.setOpaque(true);
         lblJueves3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -996,7 +1087,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves3.setBounds(600, 220, 150, 50);
 
         lblJueves4.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves4.setText("                   Vacio");
         lblJueves4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves4.setOpaque(true);
         lblJueves4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1014,7 +1104,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves4.setBounds(600, 270, 150, 50);
 
         lblJueves5.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves5.setText("                   Vacio");
         lblJueves5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves5.setOpaque(true);
         lblJueves5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1032,7 +1121,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves5.setBounds(600, 380, 150, 50);
 
         lblJueves6.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves6.setText("                   Vacio");
         lblJueves6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves6.setOpaque(true);
         lblJueves6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1050,7 +1138,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves6.setBounds(600, 430, 150, 50);
 
         lblJueves7.setBackground(new java.awt.Color(255, 153, 51));
-        lblJueves7.setText("                   Vacio");
         lblJueves7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblJueves7.setOpaque(true);
         lblJueves7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1068,7 +1155,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblJueves7.setBounds(600, 480, 150, 50);
 
         lblViernes1.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes1.setText("                   Vacio");
         lblViernes1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes1.setOpaque(true);
         lblViernes1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1086,7 +1172,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblViernes1.setBounds(750, 120, 150, 50);
 
         lblViernes2.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes2.setText("                   Vacio");
         lblViernes2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes2.setOpaque(true);
         lblViernes2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1104,7 +1189,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblViernes2.setBounds(750, 170, 150, 50);
 
         lblViernes3.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes3.setText("                   Vacio");
         lblViernes3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes3.setOpaque(true);
         lblViernes3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1122,7 +1206,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblViernes3.setBounds(750, 220, 150, 50);
 
         lblViernes4.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes4.setText("                   Vacio");
         lblViernes4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes4.setOpaque(true);
         lblViernes4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1140,7 +1223,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblViernes4.setBounds(750, 270, 150, 50);
 
         lblViernes5.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes5.setText("                   Vacio");
         lblViernes5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes5.setOpaque(true);
         lblViernes5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1158,7 +1240,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblViernes5.setBounds(750, 380, 150, 50);
 
         lblViernes6.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes6.setText("                   Vacio");
         lblViernes6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes6.setOpaque(true);
         lblViernes6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1176,7 +1257,6 @@ public class CrearHorario extends javax.swing.JFrame {
         lblViernes6.setBounds(750, 430, 150, 50);
 
         lblViernes7.setBackground(new java.awt.Color(255, 153, 51));
-        lblViernes7.setText("                   Vacio");
         lblViernes7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblViernes7.setOpaque(true);
         lblViernes7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1211,6 +1291,11 @@ public class CrearHorario extends javax.swing.JFrame {
         jButton1.setBounds(680, 570, 90, 23);
 
         jButton2.setText("Descargar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(780, 570, 100, 23);
 
@@ -1793,6 +1878,8 @@ public class CrearHorario extends javax.swing.JFrame {
                nuevo2.setNo("1");
                nuevo2.setDias(recogerDias);
                
+               recogerPeriodos.add(nuevo2);
+               
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1815,6 +1902,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("1");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1837,6 +1925,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("1");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1858,6 +1947,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("1");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1879,6 +1969,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("1");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1903,7 +1994,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("2");
                nuevo2.setDias(recogerDias);
-               
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1926,6 +2017,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("2");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1948,6 +2040,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("2");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1969,6 +2062,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("2");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -1990,6 +2084,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("2");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2014,7 +2109,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("3");
                nuevo2.setDias(recogerDias);
-               
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2037,6 +2132,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("3");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2059,6 +2155,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("3");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2080,6 +2177,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("3");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2101,6 +2199,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("3");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2126,7 +2225,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("4");
                nuevo2.setDias(recogerDias);
-               
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2149,6 +2248,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("4");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2171,6 +2271,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("4");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2192,6 +2293,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("4");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2213,6 +2315,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("4");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2237,7 +2340,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("5");
                nuevo2.setDias(recogerDias);
-               
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2260,6 +2363,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("5");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2282,6 +2386,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("5");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2303,6 +2408,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("5");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2324,6 +2430,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("5");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2348,7 +2455,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("6");
                nuevo2.setDias(recogerDias);
-               
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2371,6 +2478,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("6");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2393,6 +2501,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("6");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2414,6 +2523,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("6");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2435,6 +2545,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("6");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2458,7 +2569,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("7");
                nuevo2.setDias(recogerDias);
-               
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2481,6 +2592,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("7");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2503,6 +2615,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("7");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2511,7 +2624,7 @@ public class CrearHorario extends javax.swing.JFrame {
           }
           
             if(!vacio){
-           contenido = lblJueves7getText();
+           contenido = lblJueves7.getText();
            if(contenido.compareTo("Vacio") != 0){
                String[] separado = contenido.split("#");
                LinkedList<Dia> recogerDias = new  LinkedList<Dia>();
@@ -2524,6 +2637,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("7");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2545,6 +2659,7 @@ public class CrearHorario extends javax.swing.JFrame {
                Periodo nuevo2 = new Periodo();
                nuevo2.setNo("7");
                nuevo2.setDias(recogerDias);
+               recogerPeriodos.add(nuevo2);
            } else{
                JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
                recogerPeriodos.clear();
@@ -2553,19 +2668,40 @@ public class CrearHorario extends javax.swing.JFrame {
           }
  
               if(!vacio){
+                  
+                  for (int i = 0; i < listaHorarios.size(); i++) {
+                       if(listaHorarios.get(i).getAnio().compareTo(anioActual) == 0){
+                           String gradselect =listaHorarios.get(i).getGrado();
+                           String secselect = listaHorarios.get(i).getSeccion();
+                           if((gradselect.compareTo(gradoSelect) == 0) && (secselect.compareTo(seccionSelect)==0)){
+                               listaHorarios.remove(i);
+                               break;
+                           }
+                       }
+                  }
                   Horario nuevo = new Horario ();
                   nuevo.setAnio(anioActual);
                   nuevo.setGrado(gradoSelect);
                   nuevo.setSeccion(seccionSelect);
                   nuevo.setPeriodos(recogerPeriodos);
+                  listaHorarios.add(nuevo);
+                  guardado = true;
+                  JOptionPane.showMessageDialog(null, "Guardado Con Exito");
+                  
               }
  
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       
-        int desicion = JOptionPane.showConfirmDialog(null, "Si sale sin guardar, no se aplicaran los cambios \n ¿Deseea salir?");
+
+        
+        if (guardado){
+             inicio inicio = new inicio();
+              inicio.setVisible(true);
+              dispose(); 
+        }else{           
+            int desicion = JOptionPane.showConfirmDialog(null, "Si sale sin guardar, no se aplicaran los cambios \n ¿Deseea salir?");
             
              if(desicion == JOptionPane.YES_OPTION){
                  
@@ -2573,8 +2709,16 @@ public class CrearHorario extends javax.swing.JFrame {
               inicio.setVisible(true);
               dispose();  
               
-             }       
+             }  
+        }
+        
+        
+             
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        System.out.println(lblLunes2.getText());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

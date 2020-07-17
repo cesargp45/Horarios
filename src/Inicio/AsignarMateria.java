@@ -6,6 +6,7 @@
 package Inicio;
 
 import static Inicio.CrearHorario.diaSelect;
+import static Inicio.CrearHorario.guardado;
 import static Inicio.CrearHorario.noSelect;
 import static Inicio.elegirAnio.anioActual;
 import static Inicio.elegirAnio.gradoSelect;
@@ -146,11 +147,18 @@ public class AsignarMateria extends javax.swing.JFrame {
                   
                      for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {
                          String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
+                         String materia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
+                         String profesor = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
                          if ((dia.compareTo(diaSelect) == 0) && (numPeriodo.compareTo(noSelect) == 0)){
-                             repetida = true;
-                             gradrepetido = gradselect;
-                             seccionrep = secselect;
-                             break;
+                            
+                             
+                             if(prof.compareTo(profesor) == 0){
+                                 repetida = true;
+                                 gradrepetido = gradselect;
+                                 seccionrep = secselect;
+                                 break;
+                             }
+                             
                          }                        
                      }
                      if(repetida){
@@ -176,6 +184,7 @@ public class AsignarMateria extends javax.swing.JFrame {
                 elegido.setVerticalAlignment(SwingConstants.CENTER);
                 prof = "";
                 mat = "";
+                guardado = false;
                 dispose();
             
             }
