@@ -131,6 +131,10 @@ public class elegirAnio extends javax.swing.JFrame {
             System.out.println("entro a prepri");
             gradoSelect = separado[0];
             seccionSelect = separado[1];
+            CrearHorarioPrepri CrearHorarioPrepri = new CrearHorarioPrepri();
+            CrearHorarioPrepri.setVisible(true);
+            dispose();
+            
         }else if(separado.length == 3){
             
             if(separado [1].compareTo("Primaria") == 0){
@@ -144,6 +148,10 @@ public class elegirAnio extends javax.swing.JFrame {
                  System.out.println("entro a basicos");
                  gradoSelect = separado[0]+" "+separado[1];
                  seccionSelect = separado[2];
+                 
+                 CrearHorarioBasicos CrearHorarioBasicos = new CrearHorarioBasicos();
+                 CrearHorarioBasicos.setVisible(true);
+                 dispose();
             }
         }else{
             

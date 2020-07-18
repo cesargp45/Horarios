@@ -344,9 +344,7 @@ public class editarProfesor extends javax.swing.JFrame {
 		}catch(Exception ex){
 			System.out.println("Error: "+ex.toString());
 		}
-		finally{
-			//System.out.println(obj1);
-		}
+		
                 
                 JOptionPane.showMessageDialog(null, "Cambios Guardados");
         

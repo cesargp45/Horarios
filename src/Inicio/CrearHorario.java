@@ -14,10 +14,13 @@ import Profesor.Dia;
 import Profesor.Horario;
 import Profesor.Periodo;
 import java.awt.Color;
+import java.io.FileWriter;
 import java.util.LinkedList;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class CrearHorario extends javax.swing.JFrame {
 
@@ -45,8 +48,8 @@ public class CrearHorario extends javax.swing.JFrame {
                   
                      for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {
                          String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
-                         String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
-                         String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
+                         String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
+                         String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
                          switch(numPeriodo){
    
                               case "1" :
@@ -2685,6 +2688,7 @@ public class CrearHorario extends javax.swing.JFrame {
                   nuevo.setSeccion(seccionSelect);
                   nuevo.setPeriodos(recogerPeriodos);
                   listaHorarios.add(nuevo);
+                  guardarHorario();
                   guardado = true;
                   JOptionPane.showMessageDialog(null, "Guardado Con Exito");
                   
@@ -2753,6 +2757,65 @@ public class CrearHorario extends javax.swing.JFrame {
                 new CrearHorario().setVisible(true);
             }
         });
+    }
+    
+    
+    
+    public void guardarHorario(){
+        
+
+             JSONArray list = new JSONArray();
+            for (int i = 0; i < listaHorarios.size(); i++) {   
+                JSONObject obj0 = new JSONObject();
+                String grad =listaHorarios.get(i).getGrado();
+                String sec = listaHorarios.get(i).getSeccion();
+                String anio = listaHorarios.get(i).getAnio();
+                obj0.put("GRADO", grad);
+                obj0.put("SECCION", sec);
+                obj0.put("ANIO", anio);
+                JSONArray list1 = new JSONArray();
+                    for (int j = 0; j < listaHorarios.get(i).getPeriodos().size(); j++) {
+                        JSONObject obj1 = new JSONObject();
+                         String numPeriodo = listaHorarios.get(i).getPeriodos().get(j).getNo(); 
+                         obj1.put("NO", numPeriodo);
+                         JSONArray list2 = new JSONArray();
+                      for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {   
+                         JSONObject obj2 = new JSONObject();
+                         String dia =listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
+                         String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
+                         String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
+                         obj2.put("NOMBRE",dia);
+                         obj2.put("MATERIA", prof);
+                         obj2.put("PROFESOR", mat);
+                         list2.add(obj2); 
+                     } 
+                      obj1.put("DIAS", list2);
+                      list1.add(obj1); 
+                 }
+                    
+                    obj0.put("PERIODOS", list1);
+                    
+                     list.add(obj0); 
+            }
+        
+            
+            JSONObject obj3 = new JSONObject();
+		obj3.put("Horarios", list);
+		
+		try{
+			FileWriter file = new FileWriter("Horarios.txt");
+			file.write(obj3.toJSONString());
+			file.flush();
+			file.close();
+			
+			
+		}catch(Exception ex){
+			System.out.println("Error: "+ex.toString());
+		}
+        
+
+             
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

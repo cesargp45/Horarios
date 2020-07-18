@@ -126,11 +126,13 @@ public class AsignarMateria extends javax.swing.JFrame {
              
           mat = cbxMaterias.getSelectedItem().toString();
           prof = cbxProfesores.getSelectedItem().toString();
+             System.out.println("materia: "+mat);
+             System.out.println("profe: "+prof);
         if (mat.compareTo("") == 0 ||mat.compareTo("null") == 0 || mat == null ||prof.compareTo("") == 0 ||prof.compareTo("null") == 0 || prof == null){
             JOptionPane.showMessageDialog(null, "Seleccione una materia y un profesor");
          }else{           
            
-  
+               
              boolean repetida = false;
              String gradrepetido = "";
              String seccionrep = "";
@@ -139,6 +141,7 @@ public class AsignarMateria extends javax.swing.JFrame {
             if(listaHorarios.get(i).getAnio().compareTo(anioActual) == 0){
                 String gradselect =listaHorarios.get(i).getGrado();
                 String secselect = listaHorarios.get(i).getSeccion();
+               
                 if((gradselect.compareTo(gradoSelect) == 0) && (secselect.compareTo(seccionSelect) == 0)){
                 }else{
                 
@@ -149,7 +152,8 @@ public class AsignarMateria extends javax.swing.JFrame {
                          String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
                          String materia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
                          String profesor = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
-                         if ((dia.compareTo(diaSelect) == 0) && (numPeriodo.compareTo(noSelect) == 0)){
+                         
+                         if ((dia.compareTo(diaSelect) == 0) && (numPeriodo.compareTo(noSelect) == 0)){ // aqui esta el error
                             
                              
                              if(prof.compareTo(profesor) == 0){
@@ -190,10 +194,6 @@ public class AsignarMateria extends javax.swing.JFrame {
             }
             
             
-            
-        
-            
-           
          }
          }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Seleccione una materia y un profesor");
