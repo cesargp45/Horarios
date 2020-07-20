@@ -14,6 +14,7 @@ import static Inicio.elegirAnio.seccionSelect;
 import static Inicio.inicio.listaHorarios;
 import static Inicio.inicio.listaMaterias;
 import static Inicio.inicio.listaProfesores;
+import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -23,6 +24,7 @@ public class AsignarMateria extends javax.swing.JFrame {
      public  String mat = "";
      public  String prof = "";
     private JLabel elegido;
+   
     public AsignarMateria(JLabel elegido) {
         
         initComponents();
@@ -89,14 +91,20 @@ public class AsignarMateria extends javax.swing.JFrame {
         jPanel1.add(cbxProfesores);
         cbxProfesores.setBounds(140, 160, 170, 20);
 
-        jButton1.setText("Regresar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras1.png"))); // NOI18N
+        jButton1.setToolTipText("Regresar");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras2.png"))); // NOI18N
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras1.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(10, 263, 80, 20);
+        jButton1.setBounds(0, 230, 80, 70);
 
         jButton2.setText("Asignar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +113,7 @@ public class AsignarMateria extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(160, 220, 100, 30);
+        jButton2.setBounds(170, 220, 100, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -155,7 +163,7 @@ public class AsignarMateria extends javax.swing.JFrame {
                          
                          if ((dia.compareTo(diaSelect) == 0) && (numPeriodo.compareTo(noSelect) == 0)){ // aqui esta el error
                             
-                             
+                             System.out.println("entro aqui pero no se");
                              if(prof.compareTo(profesor) == 0){
                                  repetida = true;
                                  gradrepetido = gradselect;
@@ -186,6 +194,8 @@ public class AsignarMateria extends javax.swing.JFrame {
                 elegido.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");       
                 elegido.setHorizontalAlignment(SwingConstants.CENTER);
                 elegido.setVerticalAlignment(SwingConstants.CENTER);
+                elegido.setBackground(Color.WHITE);
+                
                 prof = "";
                 mat = "";
                 guardado = false;

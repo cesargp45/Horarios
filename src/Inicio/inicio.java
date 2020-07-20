@@ -241,54 +241,87 @@ public class inicio extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(850, 550));
         jPanel1.setLayout(null);
 
-        jLabel1.setText("Inicio");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("INICIO");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(380, 40, 60, 14);
+        jLabel1.setBounds(390, 30, 110, 40);
 
-        btnHorarios.setText("Horarios");
+        btnHorarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/horario1.png"))); // NOI18N
+        btnHorarios.setToolTipText("Crear Horario");
+        btnHorarios.setBorderPainted(false);
+        btnHorarios.setContentAreaFilled(false);
+        btnHorarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnHorarios.setDefaultCapable(false);
+        btnHorarios.setFocusPainted(false);
+        btnHorarios.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/horario2.png"))); // NOI18N
+        btnHorarios.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/horario1.png"))); // NOI18N
         btnHorarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHorariosActionPerformed(evt);
             }
         });
         jPanel1.add(btnHorarios);
-        btnHorarios.setBounds(360, 120, 110, 30);
+        btnHorarios.setBounds(240, 110, 110, 100);
 
-        jButton2.setText("Profesores");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maestra1.png"))); // NOI18N
+        jButton2.setToolTipText("Profesores");
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setFocusPainted(false);
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maestra2.png"))); // NOI18N
+        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/maestra1.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(360, 180, 110, 30);
+        jButton2.setBounds(510, 100, 130, 110);
 
-        jButton3.setText("Materias");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/materias1.png"))); // NOI18N
+        jButton3.setToolTipText("Materias");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setFocusPainted(false);
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/materias2.png"))); // NOI18N
+        jButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/materias1.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(360, 250, 110, 30);
+        jButton3.setBounds(230, 310, 110, 110);
 
-        jButton1.setText("Grados");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grados1.png"))); // NOI18N
+        jButton1.setToolTipText("Grados");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grados2.png"))); // NOI18N
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grados1.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(360, 320, 110, 30);
+        jButton1.setBounds(510, 310, 150, 110);
 
-        jButton5.setText("Salir");
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir1.png"))); // NOI18N
+        jButton5.setToolTipText("Salir");
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.setFocusPainted(false);
+        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir2.png"))); // NOI18N
+        jButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir1.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(60, 490, 53, 23);
+        jButton5.setBounds(20, 450, 90, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

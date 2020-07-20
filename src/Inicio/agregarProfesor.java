@@ -125,14 +125,20 @@ public class agregarProfesor extends javax.swing.JFrame {
         jPanel1.add(jButton2);
         jButton2.setBounds(330, 460, 130, 23);
 
-        jButton3.setText("Regresar");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras1.png"))); // NOI18N
+        jButton3.setToolTipText("Regresar");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setFocusPainted(false);
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras2.png"))); // NOI18N
+        jButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras1.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(50, 483, 90, 40);
+        jButton3.setBounds(10, 470, 70, 70);
 
         jButton4.setText("Eliminar Materia");
         jButton4.addActionListener(new java.awt.event.ActionListener() {

@@ -16,9 +16,22 @@ import static Inicio.inicio.listaProfesores;
 import Profesor.Dia;
 import Profesor.Horario;
 import Profesor.Periodo;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Color;
+import static java.awt.Component.CENTER_ALIGNMENT;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.LinkedList;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
@@ -50,41 +63,47 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                   
                      for (int k = 0; k < listaHorarios.get(i).getPeriodos().get(j).getDias().size(); k++) {
                          String dia = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getNombre();
-                         String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
-                         String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
+                         String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
+                         String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
                          switch(numPeriodo){
                              
-                             case "0" :
+                              case "0" :
                                   switch(dia){
                                     case "Lunes" :
                                         lblLunes0.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes0.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes0.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblLunes0.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes0.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes0.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes0.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes0.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles0.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles0.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles0.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles0.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves0.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves0.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves0.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves0.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes0.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes0.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes0.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes0.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
     
                                break; 
+                           
    
                               case "1" :
                                   switch(dia){
@@ -92,26 +111,31 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                         lblLunes1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes1.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes1.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblLunes1.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes1.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes1.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes1.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles1.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles1.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles1.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves1.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves1.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves1.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes1.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes1.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes1.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes1.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -119,32 +143,36 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                break; 
    
                               case "2" :
-                                  switch(dia){
+                                 switch(dia){
                                     case "Lunes" :
                                         lblLunes2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes2.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes2.setVerticalAlignment(SwingConstants.CENTER);
-                                        
+                                        lblLunes2.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes2.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes2.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes2.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles2.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles2.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles2.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves2.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves2.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves2.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes2.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes2.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes2.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes2.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -157,27 +185,31 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                         lblLunes3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes3.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes3.setVerticalAlignment(SwingConstants.CENTER);
-                                        
+                                        lblLunes3.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes3.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes3.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes3.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles3.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles3.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles3.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves3.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves3.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves3.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes3.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes3.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes3.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes3.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -190,27 +222,31 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                         lblLunes4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes4.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes4.setVerticalAlignment(SwingConstants.CENTER);
-                                        
+                                        lblLunes4.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes4.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes4.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes4.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles4.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles4.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles4.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves4.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves4.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves4.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes4.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes4.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes4.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes4.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -223,27 +259,31 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                         lblLunes5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes5.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes5.setVerticalAlignment(SwingConstants.CENTER);
-                                        
+                                        lblLunes5.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes5.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes5.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes5.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles5.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles5.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles5.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves5.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves5.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves5.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes5.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes5.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes5.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes5.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -256,27 +296,31 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                         lblLunes6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes6.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes6.setVerticalAlignment(SwingConstants.CENTER);
-                                        
+                                        lblLunes6.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes6.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes6.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes6.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles6.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles6.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles6.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves6.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves6.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves6.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes6.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes6.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes6.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes6.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -289,27 +333,31 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                                         lblLunes7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblLunes7.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblLunes7.setVerticalAlignment(SwingConstants.CENTER);
-                                        
+                                        lblLunes7.setBackground(Color.WHITE);
                                     break;
                                     case "Martes" :
                                         lblMartes7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMartes7.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMartes7.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMartes7.setBackground(Color.WHITE);
                                     break;
                                     case "Miercoles" :
                                         lblMiercoles7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblMiercoles7.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblMiercoles7.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblMiercoles7.setBackground(Color.WHITE);
                                     break;
                                     case "Jueves" :
                                         lblJueves7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblJueves7.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblJueves7.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblJueves7.setBackground(Color.WHITE);
                                     break;
                                     case "Viernes" :
                                         lblViernes7.setText("<html>#"+mat+"# <p> #"+prof+"# <html>");
                                         lblViernes7.setHorizontalAlignment(SwingConstants.CENTER);
                                         lblViernes7.setVerticalAlignment(SwingConstants.CENTER);
+                                        lblViernes7.setBackground(Color.WHITE);
                                     break;
                                                                                               
                                   }
@@ -323,137 +371,250 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
               }
             }
          }
-        
-         if(!existe){
-             lblLunes0.setText("Vacio");
-             lblLunes0.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes0.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes0.setText("Vacio");
-             lblMartes0.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes0.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles0.setText("Vacio");
-             lblMiercoles0.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles0.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves0.setText("Vacio");
-             lblJueves0.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves0.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes0.setText("Vacio");
-             lblViernes0.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes0.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes1.setText("Vacio");
-             lblLunes1.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes1.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes1.setText("Vacio");
-             lblMartes1.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes1.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles1.setText("Vacio");
-             lblMiercoles1.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles1.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves1.setText("Vacio");
-             lblJueves1.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves1.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes1.setText("Vacio");
-             lblViernes1.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes1.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes2.setText("Vacio");
-             lblLunes2.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes2.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes2.setText("Vacio");
-             lblMartes2.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes2.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles2.setText("Vacio");
-             lblMiercoles2.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles2.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves2.setText("Vacio");
-             lblJueves2.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves2.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes2.setText("Vacio");
-             lblViernes2.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes2.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes3.setText("Vacio");
-             lblLunes3.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes3.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes3.setText("Vacio");
-             lblMartes3.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes3.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles3.setText("Vacio");
-             lblMiercoles3.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles3.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves3.setText("Vacio");
-             lblJueves3.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves3.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes3.setText("Vacio");
-             lblViernes3.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes3.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes4.setText("Vacio");
-             lblLunes4.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes4.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes4.setText("Vacio");
-             lblMartes4.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes4.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles4.setText("Vacio");
-             lblMiercoles4.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles4.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves4.setText("Vacio");
-             lblJueves4.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves4.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes4.setText("Vacio");
-             lblViernes4.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes4.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes5.setText("Vacio");
-             lblLunes5.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes5.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes5.setText("Vacio");
-             lblMartes5.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes5.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles5.setText("Vacio");
-             lblMiercoles5.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles5.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves5.setText("Vacio");
-             lblJueves5.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves5.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes5.setText("Vacio");
-             lblViernes5.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes5.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes6.setText("Vacio");
-             lblLunes6.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes6.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes6.setText("Vacio");
-             lblMartes6.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes6.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles6.setText("Vacio");
-             lblMiercoles6.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles6.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves6.setText("Vacio");
-             lblJueves6.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves6.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes6.setText("Vacio");
-             lblViernes6.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes6.setVerticalAlignment(SwingConstants.CENTER);
-             
-             lblLunes7.setText("Vacio");
-             lblLunes7.setHorizontalAlignment(SwingConstants.CENTER);
-             lblLunes7.setVerticalAlignment(SwingConstants.CENTER);            
-             lblMartes7.setText("Vacio");
-             lblMartes7.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMartes7.setVerticalAlignment(SwingConstants.CENTER);
-             lblMiercoles7.setText("Vacio");
-             lblMiercoles7.setHorizontalAlignment(SwingConstants.CENTER);
-             lblMiercoles7.setVerticalAlignment(SwingConstants.CENTER);
-             lblJueves7.setText("Vacio");
-             lblJueves7.setHorizontalAlignment(SwingConstants.CENTER);
-             lblJueves7.setVerticalAlignment(SwingConstants.CENTER);
-             lblViernes7.setText("Vacio");
-             lblViernes7.setHorizontalAlignment(SwingConstants.CENTER);
-             lblViernes7.setVerticalAlignment(SwingConstants.CENTER);
-             
-         }
+         
+                     if (lblLunes1.getText().compareTo("") == 0){
+                       lblLunes1.setText("Vacio");
+                       lblLunes1.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes1.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                     
+                     if (lblLunes0.getText().compareTo("") == 0){
+                       lblLunes0.setText("Vacio");
+                       lblLunes0.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes0.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblLunes2.getText().compareTo("") == 0){
+                       lblLunes2.setText("Vacio");
+                       lblLunes2.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes2.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      if (lblLunes3.getText().compareTo("") == 0){
+                       lblLunes3.setText("Vacio");
+                       lblLunes3.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes3.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      if (lblLunes4.getText().compareTo("") == 0){
+                       lblLunes4.setText("Vacio");
+                       lblLunes4.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes4.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      if (lblLunes5.getText().compareTo("") == 0){
+                       lblLunes5.setText("Vacio");
+                       lblLunes5.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes5.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      if (lblLunes6.getText().compareTo("") == 0){
+                       lblLunes6.setText("Vacio");
+                       lblLunes6.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes6.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblLunes7.getText().compareTo("") == 0){
+                       lblLunes7.setText("Vacio");
+                       lblLunes7.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblLunes7.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMartes0.getText().compareTo("") == 0){
+                       lblMartes0.setText("Vacio");
+                       lblMartes0.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes0.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      
+                      if (lblMartes1.getText().compareTo("") == 0){
+                       lblMartes1.setText("Vacio");
+                       lblMartes1.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes1.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+
+                      if (lblMartes2.getText().compareTo("") == 0){
+                       lblMartes2.setText("Vacio");
+                       lblMartes2.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes2.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+
+                      if (lblMartes3.getText().compareTo("") == 0){
+                       lblMartes3.setText("Vacio");
+                       lblMartes3.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes3.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+
+                      if (lblMartes4.getText().compareTo("") == 0){
+                       lblMartes4.setText("Vacio");
+                       lblMartes4.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes4.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+
+                      if (lblMartes5.getText().compareTo("") == 0){
+                       lblMartes5.setText("Vacio");
+                       lblMartes5.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes5.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+
+                       if (lblMartes6.getText().compareTo("") == 0){
+                       lblMartes6.setText("Vacio");
+                       lblMartes6.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes6.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+
+                      if (lblMartes7.getText().compareTo("") == 0){
+                       lblMartes7.setText("Vacio");
+                       lblMartes7.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMartes7.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      
+                       if (lblMiercoles0.getText().compareTo("") == 0){
+                       lblMiercoles0.setText("Vacio");
+                       lblMiercoles0.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles0.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles1.getText().compareTo("") == 0){
+                       lblMiercoles1.setText("Vacio");
+                       lblMiercoles1.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles1.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles2.getText().compareTo("") == 0){
+                       lblMiercoles2.setText("Vacio");
+                       lblMiercoles2.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles2.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles2.getText().compareTo("") == 0){
+                       lblMiercoles2.setText("Vacio");
+                       lblMiercoles2.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles2.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles3.getText().compareTo("") == 0){
+                       lblMiercoles3.setText("Vacio");
+                       lblMiercoles3.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles3.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles4.getText().compareTo("") == 0){
+                       lblMiercoles4.setText("Vacio");
+                       lblMiercoles4.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles4.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles5.getText().compareTo("") == 0){
+                       lblMiercoles5.setText("Vacio");
+                       lblMiercoles5.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles5.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles6.getText().compareTo("") == 0){
+                       lblMiercoles6.setText("Vacio");
+                       lblMiercoles6.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles6.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblMiercoles7.getText().compareTo("") == 0){
+                       lblMiercoles7.setText("Vacio");
+                       lblMiercoles7.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblMiercoles7.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                       if (lblJueves0.getText().compareTo("") == 0){
+                       lblJueves0.setText("Vacio");
+                       lblJueves0.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves0.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves1.getText().compareTo("") == 0){
+                       lblJueves1.setText("Vacio");
+                       lblJueves1.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves1.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves2.getText().compareTo("") == 0){
+                       lblJueves2.setText("Vacio");
+                       lblJueves2.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves2.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves3.getText().compareTo("") == 0){
+                       lblJueves3.setText("Vacio");
+                       lblJueves3.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves3.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves4.getText().compareTo("") == 0){
+                       lblJueves4.setText("Vacio");
+                       lblJueves4.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves4.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves5.getText().compareTo("") == 0){
+                       lblJueves5.setText("Vacio");
+                       lblJueves5.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves5.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves6.getText().compareTo("") == 0){
+                       lblJueves6.setText("Vacio");
+                       lblJueves6.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves6.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblJueves7.getText().compareTo("") == 0){
+                       lblJueves7.setText("Vacio");
+                       lblJueves7.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblJueves7.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes0.getText().compareTo("") == 0){
+                       lblViernes0.setText("Vacio");
+                       lblViernes0.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes0.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes1.getText().compareTo("") == 0){
+                       lblViernes1.setText("Vacio");
+                       lblViernes1.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes1.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes2.getText().compareTo("") == 0){
+                       lblViernes2.setText("Vacio");
+                       lblViernes2.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes2.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes3.getText().compareTo("") == 0){
+                       lblViernes3.setText("Vacio");
+                       lblViernes3.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes3.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes4.getText().compareTo("") == 0){
+                       lblViernes4.setText("Vacio");
+                       lblViernes4.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes4.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes5.getText().compareTo("") == 0){
+                       lblViernes5.setText("Vacio");
+                       lblViernes5.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes5.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes6.getText().compareTo("") == 0){
+                       lblViernes6.setText("Vacio");
+                       lblViernes6.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes6.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
+                      
+                      if (lblViernes7.getText().compareTo("") == 0){
+                       lblViernes7.setText("Vacio");
+                       lblViernes7.setHorizontalAlignment(SwingConstants.CENTER);
+                       lblViernes7.setVerticalAlignment(SwingConstants.CENTER); 
+                      }
         
         
         
@@ -923,7 +1084,6 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
         lblMartes4.setBounds(300, 380, 150, 50);
 
         lblMartes5.setBackground(new java.awt.Color(255, 153, 51));
-        lblMartes5.setText("                   ");
         lblMartes5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblMartes5.setOpaque(true);
         lblMartes5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1339,32 +1499,50 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
         jPanel1.add(lblAnio);
         lblAnio.setBounds(440, 40, 70, 20);
 
-        jButton1.setText("Guardar");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar1.png"))); // NOI18N
+        jButton1.setToolTipText("Guardar");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar2.png"))); // NOI18N
+        jButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar1.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(670, 640, 90, 23);
+        jButton1.setBounds(700, 620, 50, 50);
 
-        jButton2.setText("Descargar");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pdf1.png"))); // NOI18N
+        jButton2.setToolTipText("Descargar");
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setFocusPainted(false);
+        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pdf2.png"))); // NOI18N
+        jButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pdf1.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(770, 640, 100, 23);
+        jButton2.setBounds(750, 620, 50, 50);
 
-        jButton3.setText("Regresar");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras1.png"))); // NOI18N
+        jButton3.setToolTipText("Regresar");
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setFocusPainted(false);
+        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras2.png"))); // NOI18N
+        jButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atras1.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(30, 650, 100, 23);
+        jButton3.setBounds(10, 610, 80, 70);
 
         jLabel18.setText("Grado:");
         jPanel1.add(jLabel18);
@@ -1487,11 +1665,20 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes1MouseClicked
 
     private void lblLunes1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes1MouseEntered
-                lblLunes1.setBackground(Color.orange);
+       
+      if(lblLunes1.getBackground() == Color.WHITE){
+         lblLunes1.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes1.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes1MouseEntered
 
     private void lblLunes1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes1MouseExited
-                  lblLunes1.setBackground(new Color(255,153,51));
+        if(lblLunes1.getBackground() == Color.LIGHT_GRAY){
+           lblLunes1.setBackground(Color.WHITE);
+        }else{
+          lblLunes1.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes1MouseExited
 
     private void lblLunes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes2MouseClicked
@@ -1502,11 +1689,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes2MouseClicked
 
     private void lblLunes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes2MouseEntered
-       lblLunes2.setBackground(Color.orange);
+       if(lblLunes2.getBackground() == Color.WHITE){
+         lblLunes2.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes2.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes2MouseEntered
 
     private void lblLunes2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes2MouseExited
-        lblLunes2.setBackground(new Color(255,153,51));
+        if(lblLunes2.getBackground() == Color.LIGHT_GRAY){
+           lblLunes2.setBackground(Color.WHITE);
+        }else{
+          lblLunes2.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes2MouseExited
 
     private void lblLunes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes3MouseClicked
@@ -1517,11 +1712,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes3MouseClicked
 
     private void lblLunes3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes3MouseEntered
-        lblLunes3.setBackground(Color.orange);
+        if(lblLunes3.getBackground() == Color.WHITE){
+         lblLunes3.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes3.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes3MouseEntered
 
     private void lblLunes3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes3MouseExited
-        lblLunes3.setBackground(new Color(255,153,51));
+        if(lblLunes3.getBackground() == Color.LIGHT_GRAY){
+           lblLunes3.setBackground(Color.WHITE);
+        }else{
+          lblLunes3.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes3MouseExited
 
     private void lblLunes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes4MouseClicked
@@ -1532,11 +1735,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes4MouseClicked
 
     private void lblLunes4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes4MouseEntered
-        lblLunes4.setBackground(Color.orange);
+        if(lblLunes4.getBackground() == Color.WHITE){
+         lblLunes4.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes4.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes4MouseEntered
 
     private void lblLunes4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes4MouseExited
-        lblLunes4.setBackground(new Color(255,153,51));
+        if(lblLunes4.getBackground() == Color.LIGHT_GRAY){
+           lblLunes4.setBackground(Color.WHITE);
+        }else{
+          lblLunes4.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes4MouseExited
 
     private void lblLunes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes5MouseClicked
@@ -1547,11 +1758,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes5MouseClicked
 
     private void lblLunes5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes5MouseEntered
-        lblLunes5.setBackground(Color.orange);
+        if(lblLunes5.getBackground() == Color.WHITE){
+         lblLunes5.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes5.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes5MouseEntered
 
     private void lblLunes5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes5MouseExited
-       lblLunes5.setBackground(new Color(255,153,51));
+       if(lblLunes5.getBackground() == Color.LIGHT_GRAY){
+           lblLunes5.setBackground(Color.WHITE);
+        }else{
+          lblLunes5.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes5MouseExited
 
     private void lblLunes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes6MouseClicked
@@ -1562,11 +1781,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes6MouseClicked
 
     private void lblLunes6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes6MouseEntered
-        lblLunes6.setBackground(Color.orange);
+        if(lblLunes6.getBackground() == Color.WHITE){
+         lblLunes6.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes6.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes6MouseEntered
 
     private void lblLunes6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes6MouseExited
-        lblLunes6.setBackground(new Color(255,153,51));
+        if(lblLunes6.getBackground() == Color.LIGHT_GRAY){
+           lblLunes6.setBackground(Color.WHITE);
+        }else{
+          lblLunes6.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes6MouseExited
 
     private void lblLunes7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes7MouseClicked
@@ -1577,11 +1804,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes7MouseClicked
 
     private void lblLunes7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes7MouseEntered
-        lblLunes7.setBackground(Color.orange);
+        if(lblLunes7.getBackground() == Color.WHITE){
+         lblLunes7.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblLunes7.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblLunes7MouseEntered
 
     private void lblLunes7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes7MouseExited
-       lblLunes7.setBackground(new Color(255,153,51));
+       if(lblLunes7.getBackground() == Color.LIGHT_GRAY){
+           lblLunes7.setBackground(Color.WHITE);
+        }else{
+          lblLunes7.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes7MouseExited
 
     private void lblMartes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes1MouseClicked
@@ -1592,11 +1827,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes1MouseClicked
 
     private void lblMartes1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes1MouseEntered
-        lblMartes1.setBackground(Color.orange);
+      if(lblMartes1.getBackground() == Color.WHITE){
+         lblMartes1.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes1.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes1MouseEntered
 
     private void lblMartes1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes1MouseExited
-        lblMartes1.setBackground(new Color(255,153,51));
+       if(lblMartes1.getBackground() == Color.LIGHT_GRAY){
+           lblMartes1.setBackground(Color.WHITE);
+        }else{
+          lblMartes1.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes1MouseExited
 
     private void lblMartes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes2MouseClicked
@@ -1607,11 +1850,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes2MouseClicked
 
     private void lblMartes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes2MouseEntered
-        lblMartes2.setBackground(Color.orange);
+        if(lblMartes2.getBackground() == Color.WHITE){
+         lblMartes2.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes2.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes2MouseEntered
 
     private void lblMartes2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes2MouseExited
-        lblMartes2.setBackground(new Color(255,153,51));
+        if(lblMartes2.getBackground() == Color.LIGHT_GRAY){
+           lblMartes2.setBackground(Color.WHITE);
+        }else{
+          lblMartes2.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes2MouseExited
 
     private void lblMartes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes3MouseClicked
@@ -1622,11 +1873,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes3MouseClicked
 
     private void lblMartes3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes3MouseEntered
-        lblMartes3.setBackground(Color.orange);
+        if(lblMartes3.getBackground() == Color.WHITE){
+         lblMartes3.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes3.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes3MouseEntered
 
     private void lblMartes3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes3MouseExited
-        lblMartes3.setBackground(new Color(255,153,51));
+        if(lblMartes3.getBackground() == Color.LIGHT_GRAY){
+           lblMartes3.setBackground(Color.WHITE);
+        }else{
+          lblMartes3.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes3MouseExited
 
     private void lblMartes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes4MouseClicked
@@ -1637,11 +1896,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes4MouseClicked
 
     private void lblMartes4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes4MouseEntered
-        lblMartes4.setBackground(Color.orange);
+        if(lblMartes4.getBackground() == Color.WHITE){
+         lblMartes4.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes4.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes4MouseEntered
 
     private void lblMartes4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes4MouseExited
-        lblMartes4.setBackground(new Color(255,153,51));
+        if(lblMartes4.getBackground() == Color.LIGHT_GRAY){
+           lblMartes4.setBackground(Color.WHITE);
+        }else{
+          lblMartes4.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes4MouseExited
 
     private void lblMartes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes5MouseClicked
@@ -1652,11 +1919,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes5MouseClicked
 
     private void lblMartes5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes5MouseEntered
-        lblMartes5.setBackground(Color.orange);
+        if(lblMartes5.getBackground() == Color.WHITE){
+         lblMartes5.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes5.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes5MouseEntered
 
     private void lblMartes5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes5MouseExited
-        lblMartes5.setBackground(new Color(255,153,51));
+       if(lblMartes5.getBackground() == Color.LIGHT_GRAY){
+           lblMartes5.setBackground(Color.WHITE);
+        }else{
+          lblMartes5.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes5MouseExited
 
     private void lblMartes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes6MouseClicked
@@ -1667,11 +1942,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes6MouseClicked
 
     private void lblMartes6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes6MouseEntered
-        lblMartes6.setBackground(Color.orange);
+       if(lblMartes6.getBackground() == Color.WHITE){
+         lblMartes6.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes6.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes6MouseEntered
 
     private void lblMartes6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes6MouseExited
-        lblMartes6.setBackground(new Color(255,153,51));
+       if(lblMartes6.getBackground() == Color.LIGHT_GRAY){
+           lblMartes6.setBackground(Color.WHITE);
+        }else{
+          lblMartes6.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes6MouseExited
 
     private void lblMartes7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes7MouseClicked
@@ -1682,11 +1965,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes7MouseClicked
 
     private void lblMartes7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes7MouseEntered
-        lblMartes7.setBackground(Color.orange);
+        if(lblMartes7.getBackground() == Color.WHITE){
+         lblMartes7.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMartes7.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMartes7MouseEntered
 
     private void lblMartes7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes7MouseExited
-        lblMartes7.setBackground(new Color(255,153,51));
+        if(lblMartes7.getBackground() == Color.LIGHT_GRAY){
+           lblMartes7.setBackground(Color.WHITE);
+        }else{
+          lblMartes7.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes7MouseExited
 
     private void lblMiercoles1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles1MouseClicked
@@ -1697,11 +1988,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles1MouseClicked
 
     private void lblMiercoles1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles1MouseEntered
-        lblMiercoles1.setBackground(Color.orange);
+      if(lblMiercoles1.getBackground() == Color.WHITE){
+         lblMiercoles1.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles1.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles1MouseEntered
 
     private void lblMiercoles1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles1MouseExited
-       lblMiercoles1.setBackground(new Color(255,153,51));
+       if(lblMiercoles1.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles1.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles1.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles1MouseExited
 
     private void lblMiercoles2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles2MouseClicked
@@ -1712,11 +2011,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles2MouseClicked
 
     private void lblMiercoles2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles2MouseEntered
-        lblMiercoles2.setBackground(Color.orange);
+        if(lblMiercoles2.getBackground() == Color.WHITE){
+         lblMiercoles2.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles2.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles2MouseEntered
 
     private void lblMiercoles2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles2MouseExited
-        lblMiercoles2.setBackground(new Color(255,153,51));
+        if(lblMiercoles2.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles2.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles2.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles2MouseExited
 
     private void lblMiercoles3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles3MouseClicked
@@ -1727,11 +2034,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles3MouseClicked
 
     private void lblMiercoles3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles3MouseEntered
-        lblMiercoles3.setBackground(Color.orange);
+        if(lblMiercoles3.getBackground() == Color.WHITE){
+         lblMiercoles3.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles3.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles3MouseEntered
 
     private void lblMiercoles3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles3MouseExited
-       lblMiercoles3.setBackground(new Color(255,153,51));
+       if(lblMiercoles3.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles3.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles3.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles3MouseExited
 
     private void lblMiercoles4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles4MouseClicked
@@ -1742,11 +2057,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles4MouseClicked
 
     private void lblMiercoles4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles4MouseEntered
-        lblMiercoles4.setBackground(Color.orange);
+        if(lblMiercoles4.getBackground() == Color.WHITE){
+         lblMiercoles4.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles4.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles4MouseEntered
 
     private void lblMiercoles4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles4MouseExited
-       lblMiercoles4.setBackground(new Color(255,153,51));
+       if(lblMiercoles4.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles4.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles4.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles4MouseExited
 
     private void lblMiercoles5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles5MouseClicked
@@ -1757,11 +2080,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles5MouseClicked
 
     private void lblMiercoles5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles5MouseEntered
-        lblMiercoles5.setBackground(Color.orange);
+        if(lblMiercoles5.getBackground() == Color.WHITE){
+         lblMiercoles5.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles5.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles5MouseEntered
 
     private void lblMiercoles5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles5MouseExited
-        lblMiercoles5.setBackground(new Color(255,153,51));
+        if(lblMiercoles5.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles5.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles5.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles5MouseExited
 
     private void lblMiercoles6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles6MouseClicked
@@ -1772,11 +2103,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles6MouseClicked
 
     private void lblMiercoles6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles6MouseEntered
-        lblMiercoles6.setBackground(Color.orange);
+        if(lblMiercoles6.getBackground() == Color.WHITE){
+         lblMiercoles6.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles6.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles6MouseEntered
 
     private void lblMiercoles6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles6MouseExited
-        lblMiercoles6.setBackground(new Color(255,153,51));
+        if(lblMiercoles6.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles6.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles6.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles6MouseExited
 
     private void lblMiercoles7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles7MouseClicked
@@ -1787,11 +2126,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles7MouseClicked
 
     private void lblMiercoles7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles7MouseEntered
-       lblMiercoles7.setBackground(Color.orange);
+       if(lblMiercoles7.getBackground() == Color.WHITE){
+         lblMiercoles7.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblMiercoles7.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblMiercoles7MouseEntered
 
     private void lblMiercoles7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles7MouseExited
-        lblMiercoles7.setBackground(new Color(255,153,51));
+        if(lblMiercoles7.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles7.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles7.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles7MouseExited
 
     private void lblJueves1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves1MouseClicked
@@ -1802,11 +2149,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves1MouseClicked
 
     private void lblJueves1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves1MouseEntered
-        lblJueves1.setBackground(Color.orange);
+     if(lblJueves1.getBackground() == Color.WHITE){
+         lblJueves1.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves1.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves1MouseEntered
 
     private void lblJueves1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves1MouseExited
-        lblJueves1.setBackground(new Color(255,153,51));
+        if(lblJueves1.getBackground() == Color.LIGHT_GRAY){
+           lblJueves1.setBackground(Color.WHITE);
+        }else{
+          lblJueves1.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves1MouseExited
 
     private void lblJueves2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves2MouseClicked
@@ -1817,11 +2172,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves2MouseClicked
 
     private void lblJueves2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves2MouseEntered
-        lblJueves2.setBackground(Color.orange);
+        if(lblJueves2.getBackground() == Color.WHITE){
+         lblJueves2.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves2.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves2MouseEntered
 
     private void lblJueves2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves2MouseExited
-        lblJueves2.setBackground(new Color(255,153,51));
+       if(lblJueves2.getBackground() == Color.LIGHT_GRAY){
+           lblJueves2.setBackground(Color.WHITE);
+        }else{
+          lblJueves2.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves2MouseExited
 
     private void lblJueves3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves3MouseClicked
@@ -1832,11 +2195,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves3MouseClicked
 
     private void lblJueves3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves3MouseEntered
-        lblJueves3.setBackground(Color.orange);
+        if(lblJueves3.getBackground() == Color.WHITE){
+         lblJueves3.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves3.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves3MouseEntered
 
     private void lblJueves3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves3MouseExited
-        lblJueves3.setBackground(new Color(255,153,51));
+        if(lblJueves3.getBackground() == Color.LIGHT_GRAY){
+           lblJueves3.setBackground(Color.WHITE);
+        }else{
+          lblJueves3.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves3MouseExited
 
     private void lblJueves4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves4MouseClicked
@@ -1847,11 +2218,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves4MouseClicked
 
     private void lblJueves4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves4MouseEntered
-        lblJueves4.setBackground(Color.orange);
+       if(lblJueves4.getBackground() == Color.WHITE){
+         lblJueves4.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves4.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves4MouseEntered
 
     private void lblJueves4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves4MouseExited
-        lblJueves4.setBackground(new Color(255,153,51));
+        if(lblJueves4.getBackground() == Color.LIGHT_GRAY){
+           lblJueves4.setBackground(Color.WHITE);
+        }else{
+          lblJueves4.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves4MouseExited
 
     private void lblJueves5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves5MouseClicked
@@ -1862,11 +2241,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves5MouseClicked
 
     private void lblJueves5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves5MouseEntered
-        lblJueves5.setBackground(Color.orange);
+        if(lblJueves5.getBackground() == Color.WHITE){
+         lblJueves5.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves5.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves5MouseEntered
 
     private void lblJueves5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves5MouseExited
-        lblJueves5.setBackground(new Color(255,153,51));
+        if(lblJueves5.getBackground() == Color.LIGHT_GRAY){
+           lblJueves5.setBackground(Color.WHITE);
+        }else{
+          lblJueves5.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves5MouseExited
 
     private void lblJueves6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves6MouseClicked
@@ -1877,11 +2264,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves6MouseClicked
 
     private void lblJueves6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves6MouseEntered
-        lblJueves6.setBackground(Color.orange);
+        if(lblJueves6.getBackground() == Color.WHITE){
+         lblJueves6.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves6.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves6MouseEntered
 
     private void lblJueves6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves6MouseExited
-        lblJueves6.setBackground(new Color(255,153,51));
+        if(lblJueves6.getBackground() == Color.LIGHT_GRAY){
+           lblJueves6.setBackground(Color.WHITE);
+        }else{
+          lblJueves6.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves6MouseExited
 
     private void lblJueves7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves7MouseClicked
@@ -1892,11 +2287,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves7MouseClicked
 
     private void lblJueves7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves7MouseEntered
-        lblJueves7.setBackground(Color.orange);
+       if(lblJueves7.getBackground() == Color.WHITE){
+         lblJueves7.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblJueves7.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblJueves7MouseEntered
 
     private void lblJueves7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves7MouseExited
-        lblJueves7.setBackground(new Color(255,153,51));
+       if(lblJueves7.getBackground() == Color.LIGHT_GRAY){
+           lblJueves7.setBackground(Color.WHITE);
+        }else{
+          lblJueves7.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves7MouseExited
 
     private void lblViernes1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes1MouseClicked
@@ -1907,11 +2310,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes1MouseClicked
 
     private void lblViernes1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes1MouseEntered
-        lblViernes1.setBackground(Color.orange);
+       if(lblViernes1.getBackground() == Color.WHITE){
+         lblViernes1.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes1.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes1MouseEntered
 
     private void lblViernes1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes1MouseExited
-        lblViernes1.setBackground(new Color(255,153,51));
+        if(lblViernes1.getBackground() == Color.LIGHT_GRAY){
+           lblViernes1.setBackground(Color.WHITE);
+        }else{
+          lblViernes1.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes1MouseExited
 
     private void lblViernes2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes2MouseClicked
@@ -1922,11 +2333,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes2MouseClicked
 
     private void lblViernes2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes2MouseEntered
-        lblViernes2.setBackground(Color.orange);
+        if(lblViernes2.getBackground() == Color.WHITE){
+         lblViernes2.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes2.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes2MouseEntered
 
     private void lblViernes2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes2MouseExited
-        lblViernes2.setBackground(new Color(255,153,51));
+       if(lblViernes2.getBackground() == Color.LIGHT_GRAY){
+           lblViernes2.setBackground(Color.WHITE);
+        }else{
+          lblViernes2.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes2MouseExited
 
     private void lblViernes3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes3MouseClicked
@@ -1937,11 +2356,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes3MouseClicked
 
     private void lblViernes3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes3MouseEntered
-        lblViernes3.setBackground(Color.orange);
+        if(lblViernes3.getBackground() == Color.WHITE){
+         lblViernes3.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes3.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes3MouseEntered
 
     private void lblViernes3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes3MouseExited
-        lblViernes3.setBackground(new Color(255,153,51));
+        if(lblViernes3.getBackground() == Color.LIGHT_GRAY){
+           lblViernes3.setBackground(Color.WHITE);
+        }else{
+          lblViernes3.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes3MouseExited
 
     private void lblViernes4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes4MouseClicked
@@ -1952,11 +2379,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes4MouseClicked
 
     private void lblViernes4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes4MouseEntered
-        lblViernes4.setBackground(Color.orange);
+       if(lblViernes4.getBackground() == Color.WHITE){
+         lblViernes4.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes4.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes4MouseEntered
 
     private void lblViernes4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes4MouseExited
-        lblViernes4.setBackground(new Color(255,153,51));
+       if(lblViernes4.getBackground() == Color.LIGHT_GRAY){
+           lblViernes4.setBackground(Color.WHITE);
+        }else{
+          lblViernes4.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes4MouseExited
 
     private void lblViernes5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes5MouseClicked
@@ -1967,11 +2402,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes5MouseClicked
 
     private void lblViernes5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes5MouseEntered
-       lblViernes5.setBackground(Color.orange);
+       if(lblViernes5.getBackground() == Color.WHITE){
+         lblViernes5.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes5.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes5MouseEntered
 
     private void lblViernes5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes5MouseExited
-        lblViernes5.setBackground(new Color(255,153,51));
+        if(lblViernes5.getBackground() == Color.LIGHT_GRAY){
+           lblViernes5.setBackground(Color.WHITE);
+        }else{
+          lblViernes5.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes5MouseExited
 
     private void lblViernes6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes6MouseClicked
@@ -1982,11 +2425,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes6MouseClicked
 
     private void lblViernes6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes6MouseEntered
-        lblViernes6.setBackground(Color.orange);
+        if(lblViernes6.getBackground() == Color.WHITE){
+         lblViernes6.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes6.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes6MouseEntered
 
     private void lblViernes6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes6MouseExited
-       lblViernes6.setBackground(new Color(255,153,51));
+       if(lblViernes6.getBackground() == Color.LIGHT_GRAY){
+           lblViernes6.setBackground(Color.WHITE);
+        }else{
+          lblViernes6.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes6MouseExited
 
     private void lblViernes7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes7MouseClicked
@@ -1997,11 +2448,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes7MouseClicked
 
     private void lblViernes7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes7MouseEntered
-       lblViernes7.setBackground(Color.orange);
+       if(lblViernes7.getBackground() == Color.WHITE){
+         lblViernes7.setBackground(Color.LIGHT_GRAY);
+      }else{
+         lblViernes7.setBackground(Color.orange);
+      }
     }//GEN-LAST:event_lblViernes7MouseEntered
 
     private void lblViernes7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes7MouseExited
-        lblViernes7.setBackground(new Color(255,153,51));
+       if(lblViernes7.getBackground() == Color.LIGHT_GRAY){
+           lblViernes7.setBackground(Color.WHITE);
+        }else{
+          lblViernes7.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes7MouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -2012,6 +2471,7 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
           String profe = "";
           String contenido = "";
           boolean vacio = false;
+          boolean vacio2 = false;
           
           
           
@@ -2033,9 +2493,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                recogerPeriodos.add(nuevo2);
                
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2056,9 +2515,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2079,9 +2537,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+              
+               vacio2 = true;
            }      
           }
           
@@ -2101,9 +2558,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2123,9 +2579,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2149,9 +2604,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                recogerPeriodos.add(nuevo2);
                
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2172,9 +2626,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2195,9 +2648,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2217,9 +2669,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2239,9 +2690,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
         
@@ -2264,9 +2714,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+              
+               vacio2 = true;
            }      
           }
           
@@ -2287,9 +2736,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2310,9 +2758,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+              
+               vacio2 = true;
            }      
           }
           
@@ -2332,9 +2779,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2354,9 +2800,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
               
@@ -2379,9 +2824,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2402,9 +2846,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2425,9 +2868,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2447,9 +2889,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2469,9 +2910,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
         
@@ -2495,9 +2935,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+              
+               vacio2 = true;
            }      
           }
           
@@ -2518,9 +2957,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2541,9 +2979,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2563,9 +3000,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+              
+               vacio2 = true;
            }      
           }
             
@@ -2585,9 +3021,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
         
@@ -2610,9 +3045,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2633,9 +3067,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+              
+               vacio2 = true;
            }      
           }
           
@@ -2656,9 +3089,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2678,9 +3110,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2700,9 +3131,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
         
@@ -2725,9 +3155,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2748,9 +3177,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2771,9 +3199,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2793,9 +3220,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2815,9 +3241,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
         
@@ -2839,9 +3264,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2862,9 +3286,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2885,9 +3308,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
           
@@ -2907,9 +3329,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
             
@@ -2929,13 +3350,12 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                nuevo2.setDias(recogerDias);
                recogerPeriodos.add(nuevo2);
            } else{
-               JOptionPane.showMessageDialog(null, "Existen lugares Vacios, no puede Guardarse el horario");
-               recogerPeriodos.clear();
-               vacio = true;
+               
+               vacio2 = true;
            }      
           }
  
-              if(!vacio){
+              if(!vacio2){
                   
                   for (int i = 0; i < listaHorarios.size(); i++) {
                        if(listaHorarios.get(i).getAnio().compareTo(anioActual) == 0){
@@ -2957,6 +3377,34 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                   guardarHorario();
                   JOptionPane.showMessageDialog(null, "Guardado Con Exito");
                   
+              }else{
+                  int desicion = JOptionPane.showConfirmDialog(null, "Existen espacios vacios \n ¿Deseea guardar igualmente?");
+            
+                 if(desicion == JOptionPane.YES_OPTION){
+                    
+                     for (int i = 0; i < listaHorarios.size(); i++) {
+                       if(listaHorarios.get(i).getAnio().compareTo(anioActual) == 0){
+                           String gradselect =listaHorarios.get(i).getGrado();
+                           String secselect = listaHorarios.get(i).getSeccion();
+                           if((gradselect.compareTo(gradoSelect) == 0) && (secselect.compareTo(seccionSelect)==0)){
+                               listaHorarios.remove(i);
+                               break;
+                           }
+                       }
+                  }
+                  Horario nuevo = new Horario ();
+                  nuevo.setAnio(anioActual);
+                  nuevo.setGrado(gradoSelect);
+                  nuevo.setSeccion(seccionSelect);
+                  nuevo.setPeriodos(recogerPeriodos);
+                  listaHorarios.add(nuevo);
+                  guardarHorario();
+                  guardado = true;
+                  JOptionPane.showMessageDialog(null, "Guardado Con Exito");
+                  
+              
+                }  
+              
               }
  
         
@@ -2999,11 +3447,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblLunes0MouseClicked
 
     private void lblLunes0MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes0MouseEntered
-        lblLunes0.setBackground(Color.orange);
+       if(lblLunes0.getBackground() == Color.WHITE){
+           lblLunes0.setBackground(Color.LIGHT_GRAY);
+        }else{
+          lblLunes0.setBackground(Color.orange);
+        }
     }//GEN-LAST:event_lblLunes0MouseEntered
 
     private void lblLunes0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLunes0MouseExited
-         lblLunes0.setBackground(new Color(255,153,51));
+         if(lblLunes0.getBackground() == Color.LIGHT_GRAY){
+           lblLunes0.setBackground(Color.WHITE);
+        }else{
+          lblLunes0.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblLunes0MouseExited
 
     private void lblMartes0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes0MouseClicked
@@ -3014,11 +3470,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMartes0MouseClicked
 
     private void lblMartes0MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes0MouseEntered
-        lblMartes0.setBackground(Color.orange);
+        if(lblMartes0.getBackground() == Color.WHITE){
+           lblMartes0.setBackground(Color.LIGHT_GRAY);
+        }else{
+          lblMartes0.setBackground(Color.orange);
+        }
     }//GEN-LAST:event_lblMartes0MouseEntered
 
     private void lblMartes0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMartes0MouseExited
-        lblMartes0.setBackground(new Color(255,153,51));
+        if(lblMartes0.getBackground() == Color.LIGHT_GRAY){
+           lblMartes0.setBackground(Color.WHITE);
+        }else{
+          lblMartes0.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMartes0MouseExited
 
     private void lblMiercoles0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles0MouseClicked
@@ -3029,11 +3493,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMiercoles0MouseClicked
 
     private void lblMiercoles0MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles0MouseEntered
-        lblMiercoles0.setBackground(Color.orange);
+        if(lblMiercoles0.getBackground() == Color.WHITE){
+           lblMiercoles0.setBackground(Color.LIGHT_GRAY);
+        }else{
+          lblMiercoles0.setBackground(Color.orange);
+        }
     }//GEN-LAST:event_lblMiercoles0MouseEntered
 
     private void lblMiercoles0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMiercoles0MouseExited
-        lblMiercoles0.setBackground(new Color(255,153,51));
+        if(lblMiercoles0.getBackground() == Color.LIGHT_GRAY){
+           lblMiercoles0.setBackground(Color.WHITE);
+        }else{
+          lblMiercoles0.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblMiercoles0MouseExited
 
     private void lblJueves0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves0MouseClicked
@@ -3044,11 +3516,19 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblJueves0MouseClicked
 
     private void lblJueves0MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves0MouseEntered
-        lblJueves0.setBackground(Color.orange);
+        if(lblJueves0.getBackground() == Color.WHITE){
+           lblJueves0.setBackground(Color.LIGHT_GRAY);
+        }else{
+          lblJueves0.setBackground(Color.orange);
+        }
     }//GEN-LAST:event_lblJueves0MouseEntered
 
     private void lblJueves0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblJueves0MouseExited
-       lblJueves0.setBackground(new Color(255,153,51));
+      if(lblJueves0.getBackground() == Color.LIGHT_GRAY){
+           lblJueves0.setBackground(Color.WHITE);
+        }else{
+          lblJueves0.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblJueves0MouseExited
 
     private void lblViernes0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes0MouseClicked
@@ -3059,13 +3539,24 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
     }//GEN-LAST:event_lblViernes0MouseClicked
 
     private void lblViernes0MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes0MouseEntered
-        lblViernes0.setBackground(Color.orange);
+        if(lblViernes0.getBackground() == Color.WHITE){
+           lblViernes0.setBackground(Color.LIGHT_GRAY);
+        }else{
+          lblViernes0.setBackground(Color.orange);
+        }
     }//GEN-LAST:event_lblViernes0MouseEntered
 
     private void lblViernes0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblViernes0MouseExited
-        lblViernes0.setBackground(new Color(255,153,51));
+        if(lblViernes0.getBackground() == Color.LIGHT_GRAY){
+           lblViernes0.setBackground(Color.WHITE);
+        }else{
+          lblViernes0.setBackground(new Color(255,153,51));
+        }
     }//GEN-LAST:event_lblViernes0MouseExited
 
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -3126,8 +3617,8 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
                          String prof = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getProfesor();
                          String mat = listaHorarios.get(i).getPeriodos().get(j).getDias().get(k).getMateria();
                          obj2.put("NOMBRE",dia);
-                         obj2.put("MATERIA", prof);
-                         obj2.put("PROFESOR", mat);
+                         obj2.put("MATERIA", mat);
+                         obj2.put("PROFESOR", prof);
                          list2.add(obj2); 
                      } 
                       obj1.put("DIAS", list2);
@@ -3158,6 +3649,1090 @@ public class CrearHorarioBasicos extends javax.swing.JFrame {
              
 
     }
+  
+  
+  
+   public void crearPDF(){
+     
+     Document document = new Document();
+         
+        try{
+            boolean r = true;
+            JFileChooser guardar = new JFileChooser();
+            guardar.showSaveDialog(null);
+            guardar.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            File archivo = guardar.getSelectedFile();
+            String p = archivo.getPath()+".pdf";
+            
+            
+            PdfWriter.getInstance(document, new FileOutputStream("tablas.pdf"));
+            archivo.delete();
+            document.open();
+             
+            // Este codigo genera una tabla de 3 columnas
+            PdfPTable table = new PdfPTable(6);  
+            
+             
+            // addCell() agrega una celda a la tabla, el cambio de fila
+            // ocurre automaticamente al llenar la fila
+            //PdfPCell celdainicio = new PdfPCell(new Paragraph("Final de la tabla"));
+           if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(gradoSelect+" "+ seccionSelect);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                cell2.setColspan(6); 
+                table.addCell(cell2);
+            }
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("Hora");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);               
+                table.addCell(cell2);
+            }
+             
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("Lunes");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("Martes");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("Miercoles");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+             if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("Jueves");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+              if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",12, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("Viernes");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+           
+           
+            
+            
+            String contenido= "";
+            String profesor = "";
+            String materia = "";
+            String[] separado = null;
+            
+            
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("7:15 - 8:00");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes0.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes0.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles0.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves0.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes0.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            
+            
+            
+             if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("8:00 - 8:45");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes1.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes1.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles1.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves1.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes1.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+   
+            
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("8:45 - 9:30");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes2.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes2.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles2.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves2.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes2.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+  
+             if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("9:30 - 10:15");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes3.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes3.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles3.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves3.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes3.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("10:15 - 11:00");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes4.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes4.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles4.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves4.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes4.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("11:00 - 11:30");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+             
+             if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",10, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("RECREO");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                cell2.setColspan(5); 
+                table.addCell(cell2);
+            }
+            
+            
+            
+            
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("11:30 - 12:15");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes5.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes5.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles5.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves5.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes5.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("12:15 - 1:00");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes6.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes6.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles6.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves6.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes6.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+           
+            
+            
+            if(r){
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add("1:00 - 1:45");
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+            }
+            
+            
+            contenido = lblLunes7.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            
+            contenido = lblMartes7.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblMiercoles7.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            
+            contenido = lblJueves7.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+            contenido = lblViernes7.getText();
+            separado = contenido.split("#");
+            if(separado.length > 1){
+                materia = separado[1];
+                profesor = separado[3];
+                Paragraph n = new Paragraph();               
+                Font f = new Font(FontFactory.getFont("Arial",8, Font.BOLD));
+                n.setFont(f);
+                n.setAlignment(Element.ALIGN_CENTER);
+                n.add(materia +"\n"+profesor);
+                PdfPCell cell2 = new PdfPCell();
+                cell2.setPaddingTop(CENTER_ALIGNMENT);
+                cell2.addElement(n);
+                table.addCell(cell2);
+                
+            }else{
+                table.addCell("Vacio");
+            }
+            
+             
+            // Si desea crear una celda de mas de una columna
+            // Cree un objecto Cell y cambie su propiedad span
+             
+            PdfPCell celdaFinal = new PdfPCell(new Paragraph("Final de la tabla"));
+             
+            // Indicamos cuantas columnas ocupa la celda
+            celdaFinal.setColspan(3);
+            table.addCell(celdaFinal);
+             
+            // Agregamos la tabla al documento            
+            document.add(table);
+             
+            document.close();
+             
+        }catch(Exception e)
+        {
+            System.err.println("Ocurrio un error al crear el archivo");
+            System.exit(-1);
+        }
+         
+         
+         
+     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
